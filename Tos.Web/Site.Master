@@ -1,0 +1,404 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Tos.Web.SiteMaster" %>
+<%--/** 最終更新日 : 2018-08-07 **/--%>
+<!DOCTYPE html>
+<html>
+<head id="Head1" runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+    <meta name="google" value="notranslate" /> <%-- Google翻訳を無効化にするMETAタグ--%>
+    <meta name="format-detection" content="telephone=no">
+
+    <%-- Page のタイトルを設定します。 --%>
+    <title><%= GetPageTitle(Page.Title) %></title>
+
+    <!-- CSS -->
+    <% #if DEBUG %>
+    <link media="all" rel="stylesheet" href="<%=ResolveUrl("~/Content/bootstrap.css") %>" type="text/css" />
+    <% #else %>
+    <link media="all" rel="stylesheet" href="<%=ResolveUrl("~/Content/bootstrap.min.css") %>" type="text/css" />
+    <% #endif %>
+    <link media="all" rel="stylesheet" href="<%=ResolveUrl("~/Content/site.css") %>" type="text/css" />
+    <link media="all" rel="stylesheet" href="<%=ResolveUrl("~/Content/themes/base/jquery-ui.css") %>" type="text/css" />
+    <link media="all" rel="stylesheet" href="<%=ResolveUrl("~/Content/menu.css") %>" type="text/css" />
+    <link media="all" rel="stylesheet" href="<%=ResolveUrl("~/Content/icons.css") %>" type="text/css" />
+    <link media="all" rel="stylesheet" href="<%=ResolveUrl("~/Content/select2.css") %>" type="text/css" />
+    <link media="all" rel="stylesheet" href="<%=GetUrlWithLastUpdateTime("~/Content/app.css") %>" type="text/css" />
+
+    <style type="text/css">
+        #logout
+        {
+            min-width: 30px;
+        }
+        .cursor
+        {
+            cursor: pointer;
+        }
+
+        .app-title, .page-title
+        {
+            padding-top: 13px;
+            padding-bottom: 7px;
+        }
+
+        .deploy-enviroment 
+        {
+            padding: 13px 0px 7px 0px;
+        }
+
+    </style>
+
+    <!-- 
+        下記の KB 提供されているパッチが適用されていない Internet Explorer 8 において
+        ネイティブ JSON ライブラリに Stackoverflow が発生してしまう可能性があるため JSON2 ライブラリを利用するように対応します。
+        http://support.microsoft.com/kb/976662
+        Site.Masterで下記の実装を行うことにより必ず全てのページに対応されます。
+    -->
+    <!--[if IE 8]>
+    <script type="text/javascript">
+        if (navigator.appVersion.indexOf("MSIE 8.") != -1 || navigator.appVersion.indexOf("MSIE 7.") != -1) {
+            JSON = undefined;
+        }
+    </script>        
+    <![endif]-->
+
+    <!-- JavaScript -->
+    <% #if DEBUG %>
+    <script src="<%=ResolveUrl("~/Scripts/json2.js") %>" type="text/javascript"></script>
+    <script src="<%=ResolveUrl("~/Scripts/jquery-3.3.1.js") %>" type="text/javascript"></script>
+    <script src="<%=ResolveUrl("~/Scripts/bootstrap.js") %>" type="text/javascript"></script>
+    <script src="<%=ResolveUrl("~/Scripts/bignumber.js") %>" type="text/javascript"></script>
+    <% #else %>
+    <script src="<%=ResolveUrl("~/Scripts/json2.min.js") %>" type="text/javascript"></script>
+    <script src="<%=ResolveUrl("~/Scripts/jquery-3.3.1.min.js") %>" type="text/javascript"></script>
+    <script src="<%=ResolveUrl("~/Scripts/bootstrap.min.js") %>" type="text/javascript"></script>
+    <script src="<%=ResolveUrl("~/Scripts/bignumber.min.js") %>" type="text/javascript"></script>
+    <% #endif %>
+
+    <!--[if lt IE 9]>
+      <script src="<%=ResolveUrl("~/Scripts/html5shiv.js") %>"></script>
+      <script src="<%=ResolveUrl("~/Scripts/respond.min.js") %>"></script>
+    <![endif]-->
+    
+    <% #if DEBUG %>
+    <script src="<%=ResolveUrl("~/Scripts/jquery-ui-1.12.1.js") %>" type="text/javascript"></script>
+    <script src="<%=ResolveUrl("~/Scripts/app.base.js") %>" type="text/javascript"></script>
+    <script src="<%=ResolveUrl("~/Scripts/app.validation.js") %>" type="text/javascript"></script>
+    <script src="<%=ResolveUrl("~/Scripts/app.validation.method.js") %>" type="text/javascript"></script>
+    <script src="<%=ResolveUrl("~/Scripts/app.obj.js") %>" type="text/javascript"></script>
+    <script src="<%=ResolveUrl("~/Scripts/app.ajax.js") %>" type="text/javascript"></script>
+    <script src="<%=ResolveUrl("~/Scripts/app.ui.js") %>" type="text/javascript"></script>
+    <% #else %>
+    <script src="<%=ResolveUrl("~/Scripts/jquery-ui-1.12.1.min.js") %>" type="text/javascript"></script>
+    <script src="<%=ResolveUrl("~/Scripts/app.min.js") %>" type="text/javascript"></script>
+    <% #endif %>
+    <script src="<%=ResolveUrl("~/Scripts/jquery.ui.datepicker-ja.js") %>" ></script>  <!-- datepicker日本語化用js -->
+
+    <!-- 2017/10導入新機能用ライブラリ　Chrome(IE11)のみで動作可能 -->
+    <% #if DEBUG %>
+    <script src="<%=ResolveUrl("~/Scripts/app.ajax.file.js") %>" type="text/javascript"></script>
+    <script src="<%=ResolveUrl("~/Scripts/app.file.js") %>" type="text/javascript"></script>
+    <script src="<%=ResolveUrl("~/Scripts/app.logger.js") %>" type="text/javascript"></script>
+    <script src="<%=ResolveUrl("~/Scripts/filedad.js") %>" type="text/javascript"></script>
+    <script src="<%=ResolveUrl("~/Scripts/tabcomm.js") %>" type="text/javascript"></script>
+    <% #else %>
+    <script src="<%=ResolveUrl("~/Scripts/app.ajax.file.min.js") %>" type="text/javascript"></script>
+    <script src="<%=ResolveUrl("~/Scripts/app.file.min.js") %>" type="text/javascript"></script>
+    <script src="<%=ResolveUrl("~/Scripts/app.logger.min.js") %>" type="text/javascript"></script>
+    <script src="<%=ResolveUrl("~/Scripts/filedad.min.js") %>" type="text/javascript"></script>
+    <script src="<%=ResolveUrl("~/Scripts/tabcomm.min.js") %>" type="text/javascript"></script>
+    <% #endif %>
+    <script>
+        window.TextEncoder = window.TextDecoder = null;
+    </script>
+    <script src="<%=ResolveUrl("~/Scripts/encoding-shiftjis.min.js") %>" type="text/javascript"></script>
+    <!-- 2017/10導入新機能用ライブラリ　Chrome(IE11)のみで動作可能 -->
+
+    <script src="<%=GetUrlWithLastUpdateTime("~/Scripts/app.extend.js") %>" type="text/javascript"></script><!-- アプリケーション用拡張ライブラリ-->
+
+    <!-- TODO: 言語ごとのリソースファイルの読み込み -->
+    <script src="<%=ResolveUrl("~/Resources/message." + lang + ".js") %>" ></script>
+    <script src="<%=ResolveUrl("~/Resources/settings." + lang + ".js") %>" ></script>
+    <script src="<%=GetUrlWithLastUpdateTime("~/Resources/message.app." + lang + ".js") %>" ></script>
+    <script src="<%=GetUrlWithLastUpdateTime("~/Resources/settings.app." + lang + ".js") %>" ></script>
+    <script src="<%=GetUrlWithLastUpdateTime("~/Resources/menu." + lang + ".js") %>" ></script>
+    <script src="<%=GetUrlWithLastUpdateTime("~/Resources/pagedata-all." + lang + ".js") %>" ></script>
+    <script src="<%=GetUrlWithLastUpdateTime("~/Resources/pagedata-dialog." + lang + ".js") %>" ></script>
+
+    <asp:ContentPlaceHolder ID="IncludeContent" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <script type="text/javascript">
+
+        var setPageTitle = function () {
+            var pageTitle = document.title.replace(/\([^\)]*\)$/, "");
+            $(".page-title").text(pageTitle);
+        }
+
+        $(function () {
+
+        //2017/10導入新機能　Chrome(IE11)のみで動作可能
+            // App.logger でのログ出力の出力先を指定します。
+            // App.logger.addSink(App.logger.sinks.createConsoleSink());
+            App.logger.addSink(App.logger.sinks.createServiceSink({
+                url: '<%=ResolveUrl("~/api/ClientLog") %>', // ログを送信する API のURL
+                retryCount: 3 // ログの送信に失敗した場合にリトライする回数
+            }));
+            // クライアントでエラーが発生した場合に、情報を付加してログに出力します。
+            window.onerror = function (msg, url, lineNo, columnNo, error) {
+                var item = App.logger.createDetailItem(msg, error); // ブラウザの詳細情報を含む、ログ項目を作成します。
+                item.source = url;
+                item.lineNumber = lineNo;
+                item.columnNo = columnNo;
+                App.logger.error(item); // ログをエラーレベルで出力します。
+            };
+        // 2017/10導入新機能　Chrome(IE11)のみで動作可能
+
+            $.ajaxSetup({ cache: false });
+
+            // 言語の設定
+            App.ui.page.lang = "<%= lang %>";
+            App.ui.pagedata.lang.applySetting(App.ui.page.lang);
+
+            // メニューの操作
+            $("#menu-toggle").on("click", function () {
+                var $menu = $(".menu-container");
+                $menu.toggle();
+            });
+
+            // メインメニューへのリンク
+            $(".navbar-brand").on("click", function () {
+                try {
+                    location.href = App.settings.app.toMainMenuLink;
+                } catch (e) {
+                    // IEでの遷移エラー回避
+                }
+            });
+
+            // 通知の設定
+            App.ui.page.setNotify(
+                App.ui.notify.info(document.body, {
+                    container: ".slideup-area .info-message",
+                    bodyContainer: ".wrap",
+                    footerContent: ".footer-content",
+                    show: function () {
+                        $(".slideup-area .info-message").show();
+                    },
+                    clear: function () {
+                        $(".slideup-area .info-message").hide();
+                    }
+                }),
+                App.ui.notify.alert(document.body, {
+                    container: ".slideup-area .alert-message",
+                    bodyContainer: ".wrap",
+                    footerContent: ".footer-content",
+                    show: function () {
+                        $(".slideup-area .alert-message").show();
+                    },
+                    clear: function () {
+                        $(".slideup-area .alert-message").hide();
+                    }
+                }),
+                App.ui.notify.warn(document.body, {
+                    container: ".slideup-area .warn-message",
+                    bodyContainer: ".wrap",
+                    footerContent: ".footer-content",
+                    show: function () {
+                        $(".slideup-area .warn-message").show();
+                    },
+                    clear: function () {
+                        $(".slideup-area .warn-message").hide();
+                    }
+                })
+            );
+
+            setPageTitle();
+
+            // utc日付変換の設定
+            if (!App.settings.base.utcDate && Date.prototype.toJSON) {
+                Date.prototype.toJSON = function (key) {
+                    return App.date.format(this, "yyyy-MM-ddTHH:mm:sszzz");
+                };
+            }
+
+            // ユーザー情報の設定
+            $.ajax(App.ajax.webapi.get('<%=ResolveUrl("~/api/User") %>', {} , {async: false}))
+            .done(function (result) {
+                // ユーザー情報の保持
+                App.ui.page.user = result;
+            }).fail(function (result) {
+                App.ui.page.notifyAlert.message(result.message).show();
+                App.ui.page.user = {
+                    Name: "",
+                    Roles: []
+                };
+
+            }).always(function (result) {
+                // 適切な権限を持たないユーザーは AuthorizedError.aspx にリダイレクト
+                if (App.ui.page.user.Roles.length === 0) {
+                    window.location = '<%=ResolveUrl("~/AuthorizedError.aspx") %>';
+                    //window.location = '<%=ResolveUrl("~/Account/Login.aspx") %>';
+                }
+
+                $("#userName").text(App.ui.page.user.Name);
+                $("#empCD").text(App.ui.page.user.EmployeeCD);
+                var baseUrl = '<%=ResolveUrl("~/") %>';
+
+                // TODO: ロールによるメニューの制御
+                App.ui.ddlmenu.setup(App.ui.page.lang, App.ui.page.user.Roles, ".menu-container", baseUrl);
+                $(App.ui.page).trigger("ready");
+
+                $(document).on("click", function (e) {
+                    var $target = $(e.target);
+
+                    if ($target.closest("a").attr("id") === "menu-toggle" || e.target.id === "menu-toggle") {
+                        return;
+                    }
+
+                    var $menu = $(".menu-container");
+                    if ($menu.css("display") == "block") {
+                        $menu.hide();
+                    }
+
+                });
+
+                $("#logout").on("click", function () {
+
+                    var done = function (isLogout) {
+                        if (isLogout === true) {
+                            $("#isLogout").val(true);
+                            //form1.submit();
+                            $("#form1").submit();  //IE対応
+                        }
+                    };
+
+                    if (App.ui.page.onlogout) {
+                        App.ui.page.onlogout(done);
+                    }
+                    else {
+                        done(true);
+                    }
+
+                    return false;
+                });
+
+                $(window).on("beforeunload", function (e) {
+                    if (App.ui.page.onclose){
+                        var message = App.ui.page.onclose();
+                        if (message) {
+                            return message;
+                        }
+                    }
+                });
+
+                <% #if DEBUG %>
+                <% #else %>
+                // 右クリック禁止
+                $(document).on("contextmenu", function (e) {
+                    var target = $(e.target);
+                    return target.is("input[type='text']") || target.is("input[type='tel']") || target.is("textarea") || target.is("a");
+                });
+                <% #endif %>
+
+                //クリック時に全選択状態にする（１回目のみ）
+                $(document).on("click", ".text-selectAll", function (e) {
+                    var target = $(e.target);
+                    if (!target.data("isSelect")) {
+                        target.select();
+                        target.data("isSelect", true);
+                    }
+                    return false;
+                }).on("blur", ".text-selectAll", function (e) {
+                    var target = $(e.target);
+                    target.data("isSelect", false);
+                });
+
+            });
+
+        });
+
+    </script>
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <div class="wrap">
+        <!-- ヘッダーのレイアウト -->
+        <div class="navbar navbar-default navbar-fixed-top <%= GetDeployEnviromentClass() %>">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="logo"></div>
+                <div class="navbar-brand app-title cursor" data-app-text="systemName">&nbsp;</div>
+                <div class="navbar-brand deploy-enviroment"><%= GetDeployEnviromentName() %></div>
+                <!-- ナビゲーションメニュー -->
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a id="menu-toggle" href="#"><i class="icon-chevron-down"></i></a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="collapse navbar-collapse">
+                <div class="navbar-brand page-title" data-prop="page-title">&nbsp;</div>
+
+                <!-- ユーザー情報のコンテナ -->
+                <form id="form1" runat="server">
+                    <p class="navbar-text pull-right">
+                        <!-- TODO: ユーザー情報の表示は コードビハインドの SetUserInfo メソッドを変更してください -->
+                        <button class="btn btn-link btn-xs" id="logout">
+                            <i class="icon-user"></i>
+                        </button>
+                        <input type="hidden" id="isLogout" value="false" runat="server" />
+                        <span id="empCD" class="emp-cd" runat="server">&nbsp;</span>
+                        <span id="userName" class="user-name" runat="server">&nbsp;</span>
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <!-- メニュー表示のコンテナー -->
+        <div class="navbar navbar-default navbar-static-top menu-container" style="display:none;margin-top:-3px">
+        </div>
+    
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+
+    <!-- フッターのレイアウト -->
+    <div class="footer">
+        <div class="footer-container">
+            <!-- 通知／エラーメッセージの表示エリア -->
+            <div class="message-area slideup-area">
+                <div class="alert-message" data-app-text="title:alertTitle" style="display: none">
+                    <ul></ul>
+                </div>
+                <div class="info-message" data-app-text="title:infoTitle" style="display: none">
+                    <ul></ul>
+                </div>
+                <div class="warn-message" data-app-text="title:warnTitle" style="display: none">
+                    <ul></ul>
+                </div>
+            </div>
+
+            <div class="footer-content">
+                <asp:ContentPlaceHolder ID="FooterContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </div>
+
+    <!-- ファイル添付用プレースフォルダ -->
+    <div id="files"></div>
+
+    <asp:ContentPlaceHolder ID="DialogsContent" runat="server">
+    </asp:ContentPlaceHolder>
+
+</body>
+</html>

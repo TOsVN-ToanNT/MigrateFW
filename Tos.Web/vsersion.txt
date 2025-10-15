@@ -1,0 +1,6 @@
+﻿jQuery			1.10.1
+jQuery.UI		1.10.3
+json2			1.0.2
+WebApi			4.0.30506.0
+jqGrid			4.5.2
+EntityFramework	5.0

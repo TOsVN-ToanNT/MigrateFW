@@ -1,0 +1,671 @@
+//@ last update : 2018-08-24
+@import './reset.less';
+@import './constants.less';
+
+//@nav-top-height: 60px;
+//@footer-height: 45px;
+@nav-top-height: 45px;
+@footer-height: 40px;
+
+@control-background-color: #f6f6f6;
+@control-border-color: #dfdfdf;
+
+//@control-success-background-color: #f4f8fa;
+//@control-success-border-color: #5bc0de;
+
+
+@control-success-background-color: #f6f6f6;
+@control-success-border-color: #dfdfdf;
+
+@control-required-background-color: #FFDAB9;
+@control-required-border-color: #d9534f;
+@control-warn-background-color: #fcf8f2;
+@control-warn-border-color: #f0ad4e;
+
+@message-background-color: #ffffff;
+@alert-border-color: #ff6666;
+@alert-color: #FF0000;
+@alert-hover-background-color:#fcf2f2;
+@info-border-color: #6666ff;
+@info-color: #0000FF;
+@info-hover-background-color:#f0f7fd;
+@warn-border-color: #f0ad4e;
+@warn-color: #eea236;
+@warn-hover-background-color:#fcf8e3;
+
+@datatable-th-background-color: #efefef;
+@datatable-td-background-color: #ffffff;
+@datatable-border: 1px solid #cccccc;
+@unselected-background-color: #dfdfdf;
+@selected-background-color: #5cb85c;
+@haserror-background-color:#FFDAB9;
+
+@form-control-border: 1px solid #cccccc;
+@form-control-border-radius: 2px;
+@form-control-height: 26px;
+
+/* Typography (Bootstrap のオーバーライド）
+-------------------------------------*/
+h1, h2, h3, h4, h5 {
+    font-family: @default-font-family;
+}
+
+/* global タグのスタイル定義
+-------------------------------------*/
+
+* {
+    font-family: @default-font-family;
+}
+
+body {
+    height: 100%;
+    font-size: 13px;
+}
+
+.wrap {
+    min-height: 100%;
+    padding-top: @nav-top-height;
+    padding-bottom: @footer-height + 15px;
+}
+
+/* ヘッダーのスタイル定義
+-------------------------------------*/
+.logo {
+    height: 30px;
+    width: 45px;
+    margin-left: 5px;
+    float: left;
+    background-image: url("images/logo.png");
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    margin-top: 10px;
+}
+
+/* ヘッダーのスタイル定義
+-------------------------------------*/
+.menu-container {
+    position: absolute;
+    margin-top: -20px;
+    width: 100%;
+    z-index: 1000;
+}
+
+@media (min-width: 750px) and (max-width: 970px)
+{
+    .page-title {
+        width: 250px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}
+
+/* footer クラスのスタイル定義
+-------------------------------------*/
+.footer {
+    
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 990;
+
+    .footer-container {
+        background-color: @footer-bgcolor;
+        z-index: 2;
+    }
+
+    .footer-content {
+        height: @footer-height;
+        position: relative;
+        .command
+        {
+            text-align: right;
+            position:absolute;
+            right: 15px;
+            top: 5px;
+
+            button {
+                margin-left: 6px;
+                min-width: 80px;
+            }
+        }
+        .command-left
+        {
+            text-align: left;
+            position:absolute;
+            left: 15px;
+            top: 5px;
+
+            button {
+                margin-left: 6px;
+                min-width: 80px;
+            }
+        }
+    }
+}
+
+/* table
+----------------------------------*/
+table.datatable {
+    border-collapse: collapse;
+    width: 100%;
+    margin-right: 10px; 
+    /*max-width: 2000px;*/ 
+
+    thead {
+        background-color: @datatable-th-background-color;
+    }
+
+    th,td {
+        border-collapse: collapse;
+        padding: 1px;
+        vertical-align: middle;
+    }
+
+    th {
+        border: @datatable-border;
+        background-color: @datatable-th-background-color;
+        font-weight: normal;
+        text-align: center;
+
+        i{
+            margin-left:5px;
+        }
+    }
+    
+
+    td {
+        border: @datatable-border;
+        button { 
+            padding: 0 2px 0 2px; 
+            min-width:0;
+        }
+        label { 
+            min-width:0;
+        }
+        input[type="checkbox"] {
+            vertical-align: middle;
+        }
+    }
+
+    td.center {
+        text-align: center;
+    }
+
+    tbody { 
+        background-color: @datatable-td-background-color; 
+    }
+
+    input[type="text"], input[type="tel"], select, textarea {
+        margin:0px; 
+        margin-top: 2px; 
+        margin-bottom: 2px;
+        width: 100%; 
+        box-sizing: border-box;
+    }
+
+    button {
+        margin:0px; 
+        margin-top: 2px; 
+        margin-bottom: 2px;
+    }
+    .select-tab
+    {
+        border-left-width:7px;
+        border-left-style:solid;
+        min-width:0px;
+        display: block;
+        height:24px;
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+    }
+    .select-tab-2lines
+    {
+        border-left-width:7px;
+        border-left-style:solid;
+        min-width:0px;
+        display: block;
+        height:55px;
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+    }
+    .selected
+    {
+        border-left-color: @selected-background-color;
+    }
+    .unselected
+    {
+        border-left-color: @unselected-background-color;
+    }
+    .unselected-hover
+    {
+        border-left-color: @unselected-background-color - 30;
+    }
+    .has-error
+    {
+        background-color: @haserror-background-color;
+    }
+    tbody tr{
+        height: 2.4em;
+    }
+    tbody.autoheight tr{
+        height: auto;
+    }
+}
+
+
+/* form コントロールのスタイル定義
+----------------------------------*/
+label {
+    display: inline-block;
+    padding: 1px;
+    min-width: 80px;
+    font-weight: normal;
+}
+
+.text {
+    border: @form-control-border;
+    border-radius: @form-control-border-radius;
+    margin: 1px;
+    padding: 1px;
+    /* min-width: 100px; */
+    display: inline-block;
+    height: @form-control-height;
+}
+
+input[type="text"], input[type="tel"], select, textarea {
+    .text;
+    font-family: @default-font-family;
+    ime-mode: inactive;
+}
+
+
+select {
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+button, input[type="button"], input[type="submit"], a.btn {
+    min-width: 60px;
+}
+
+.control-common {
+    padding: 2px;
+    margin-bottom: 2px;
+    height: 30px;
+
+    input[type="text"], input[type="tel"], select {
+        margin-bottom: 3px;
+    }
+
+    button, input[type="button"], input[type="submit"], a.btn {
+        margin-top: 1px;
+        margin-bottom: 1px;
+    }
+
+    input[type="checkbox"], input[type="radio"] {
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+}
+
+.control-end {
+    border-right: 5px solid #ffffff;
+}
+
+.control {
+    background-color: @control-background-color;
+    .control-common;
+}
+        
+.control-label {
+    border-left: 5px solid @control-border-color;
+    .control;
+}
+
+.control-label.toolbar {
+    height: auto;
+    min-height: 30px;
+}
+
+.control-success {
+    background-color: @control-success-background-color;
+    .control-common;
+}
+
+.control-success-label {
+    border-left: 5px solid @control-success-border-color;
+    .control-success;
+}
+        
+.control-required {
+    background-color: @control-required-background-color;
+    .control-common;
+}
+
+.control-required-label {
+    border-left: 5px solid @control-required-border-color;
+    .control-required;
+}
+
+.control-warn {
+    background-color: @control-warn-background-color;
+    .control-common;
+}
+        
+.control-warn-label {
+    border-left: 5px solid @control-warn-border-color;
+    .control-warn;
+}
+
+/* メニュー用のコントロール */
+
+.menucontainer [class^="col-"],
+.menucontainer [class*=" col-"] {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.menu-control {
+    .control-common;
+    background-color:#ffffff;
+}
+
+.height-break {
+    min-height: 30px;
+    height: auto;
+}
+
+.menu-control-label {
+    .control;
+    background-color: #ffffff;
+    border-left: 5px solid #cfcfcf;
+    .height-break;
+}
+
+@menu-control-success-background-color: #f4f8fa;
+.menu-control-success {
+    background-color: @menu-control-success-background-color;
+    border-right:5px solid white;
+    border-left:5px solid #bce8f1;
+    .control-common;
+    .height-break;
+
+}
+
+.menu-child-control-success {
+    .menu-control-success;
+    border-right-width:0px;
+    .height-break;
+
+}
+
+.menu-control-success-label {
+    border-left: 5px solid @control-success-background-color - 10;
+    background-color: @control-success-background-color - 10;
+    .control-success;
+    .height-break;
+
+}
+
+.menu-item
+{
+    text-align: left;
+    width: 100%;    
+    color: #555555;
+    font-size: 16px;
+}
+
+.menu-child-row
+{
+    /*padding-left: 15px;*/
+    padding-right: 5px;
+}
+
+.menu-child-item:hover
+{
+    background-color:rgb(240, 247, 253);
+    border-left-color: #58b7f8;/*#d0e3f0;*/
+}
+
+/* メッセージ表示領域のクラス定義
+----------------------------------*/
+.message-area {
+
+    margin-left: auto;
+    margin-right: auto;
+
+    span {
+        float: left;
+        margin: 8px;
+    }
+
+    .notify-title-holder {
+        height: 32px;
+        cursor: pointer;
+        margin-top: 5px;
+    }
+
+    .notify-title-message-length {
+        margin-right: 5px;
+    }
+
+    .notify-title-open, .notify-title-close {
+        vertical-align: middle;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: -5px;
+    }
+
+    .alert-message {
+        color: @alert-color;
+        background-color: @message-background-color;
+        border-top: 2px solid @alert-border-color;
+        max-height: 200px;
+        overflow: auto;
+
+        ul {
+            margin: 0px;
+            list-style: none;
+            padding: 0px;
+
+            pre {
+                font-family: @default-font-family;
+                display: block;
+                padding: 4px;
+                padding-left: 40px;
+            }
+
+            pre:hover {
+                background-color: @alert-hover-background-color;
+            }
+        }
+    }
+
+    .info-message {
+        border-top: 2px solid @info-border-color;
+        color: @info-color;
+        background-color: @message-background-color;
+        max-height: 200px;
+        overflow: auto;
+
+        ul {
+            margin-top: 5px;
+            list-style: none;
+
+            pre {
+                font-family: @default-font-family;
+                display: block;
+                padding: 4px;
+                padding-left: 10px;
+            }
+
+            pre:hover {
+                background-color: @info-hover-background-color;
+            }
+        }
+    }
+
+    .warn-message {
+        border-top: 2px solid @warn-border-color;
+        color: @warn-color;
+        background-color: @message-background-color;
+        max-height: 200px;
+        overflow: auto;
+
+        ul {
+            margin-top: 5px;
+            list-style: none;
+
+            pre {
+                font-family: @default-font-family;
+                display: block;
+                padding: 4px;
+                padding-left: 10px;
+            }
+
+            pre:hover {
+                background-color: @warn-hover-background-color;
+            }
+        }
+    }
+}
+
+/*ボタンのスタイル*/
+button {
+    &.btn[disabled] {
+        border-color: #cccccc;
+        background-color: rgb(255,255,255);
+        color: #999999;
+    }
+}
+
+/*loading*/
+.loading .loading-overlay {
+    background-color: #999999;
+    opacity: .3;
+    filter: alpha(opacity=30);
+}
+
+.loading .loading-holder {
+    width: 100%;
+}
+
+.loading .loading-image {
+      height: 50px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-image: url(images/loading.gif);
+}
+
+.loading .loading-message {
+      margin-top: 1em;
+      font-size: 1.5em;
+      text-align: center;
+}
+
+.number-right
+{
+    text-align: right;
+    display: block;
+    float: left;
+    width: 100%;
+    
+}
+
+.data-count {
+    margin-top: 5px;
+    margin-right: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+input[type="text"].ime-active, input[type="tel"].ime-active, select.ime-active, textarea.ime-active {
+    ime-mode: active;
+}
+
+/* 年月指定のdatepicker利用時のcss */      
+.hide-calendar .ui-datepicker-calendar {
+    display: none;
+}
+
+.ui-datepicker-month {
+    width: 70px !important;
+}
+
+/* datatableの選択行背景色 */
+.datatable tr.selected-row {
+    background-color: #fffed4;
+}
+
+/* subtotal使用時の小計行背景色 */
+.subtotal {
+    tr {
+        background-color: #f0f8ff;
+
+        td{
+            font-weight: bold;
+        }
+    }
+}
+
+/* 文字列がオーバーフローすると...表示する*/
+.overflow-ellipsis {
+    float:left;
+    white-space: nowrap;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow:hidden;
+    width:100%;
+}
+
+.toolbar .data-count
+{
+	position: absolute;
+	right: 2px;
+}
+
+/** ファイルdrag&drop用*/
+.drop-description {
+    position: absolute;
+    width: 80%;
+    font-size: 16px;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    -ms-transform: translateY(-50%) translateX(-50%);
+}
+
+.drop-zone.drag-over {
+    border: 3px dashed #314ef7;
+}
+
+/** スライドアップメッセージ表示時のレイアウト調整 */
+.modal-body {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.modal-message  {
+    position: absolute;
+    bottom: 45px;
+    left: 0px;
+    right: 0px;
+    margin-right: 17px;
+    z-index: 900;
+}
+.modal .toolbar .data-count {
+    position: absolute;
+    right: 20px;
+}
+.modal-footer {
+    padding: 5px 20px 5px 20px;
+}
+
+/* datepicker*/
+.ui-datepicker
+{
+    z-index: 600 !important;
+}

@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SampleModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="SampleModelStoreContainer">
+    <EntitySet Name="Buhin" EntityType="SampleModel.Store.Buhin" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BuhinCalendar" EntityType="SampleModel.Store.BuhinCalendar" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FixedKentosho" EntityType="SampleModel.Store.FixedKentosho" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FixedMitsumori" EntityType="SampleModel.Store.FixedMitsumori" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Kentosho" EntityType="SampleModel.Store.Kentosho" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ma_maker" EntityType="SampleModel.Store.ma_maker" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Mitsumori" EntityType="SampleModel.Store.Mitsumori" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MitsumoriDirect" EntityType="SampleModel.Store.MitsumoriDirect" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="News" EntityType="SampleModel.Store.News" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Product" EntityType="SampleModel.Store.Product" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ShiharaiJoken" EntityType="SampleModel.Store.ShiharaiJoken" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Shinsei" EntityType="SampleModel.Store.Shinsei" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tenpu" EntityType="SampleModel.Store.Tenpu" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Torihiki" EntityType="SampleModel.Store.Torihiki" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tr_torihiki_buhin" EntityType="SampleModel.Store.tr_torihiki_buhin" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Buhin">
+    <Key>
+      <PropertyRef Name="cd_buhin" />
+    </Key>
+    <Property Name="cd_buhin" Type="int" Nullable="false" />
+    <Property Name="nm_buhin" Type="nvarchar" MaxLength="50" />
+    <Property Name="kin_shiire" Type="decimal" Scale="2" />
+    <Property Name="nm_tani" Type="nvarchar" MaxLength="4" />
+    <Property Name="dt_create" Type="datetimeoffset" />
+    <Property Name="cd_create" Type="nvarchar" MaxLength="10" />
+    <Property Name="dt_update" Type="datetimeoffset" />
+    <Property Name="cd_update" Type="nvarchar" MaxLength="10" />
+    <Property Name="ts" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="BuhinCalendar">
+    <Key>
+      <PropertyRef Name="no_buhin_calendar" />
+    </Key>
+    <Property Name="no_buhin_calendar" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="cd_buhin" Type="int" Nullable="false" />
+    <Property Name="dt_sakusei" Type="datetime" Nullable="false" />
+    <Property Name="nm_komoku" Type="nvarchar" MaxLength="200" />
+    <Property Name="su_suryo" Type="int" />
+    <Property Name="kin_shiire_tanka" Type="decimal" Scale="2" />
+    <Property Name="dt_create" Type="datetimeoffset" />
+    <Property Name="cd_create" Type="nvarchar" MaxLength="10" />
+    <Property Name="dt_update" Type="datetimeoffset" />
+    <Property Name="cd_update" Type="nvarchar" MaxLength="10" />
+    <Property Name="ts" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="FixedKentosho">
+    <Key>
+      <PropertyRef Name="no_kento" />
+    </Key>
+    <Property Name="no_kento" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="no_fixed" Type="int" Nullable="false" />
+    <Property Name="no_komoku" Type="int" />
+    <Property Name="cd_buhin" Type="int" Nullable="false" />
+    <Property Name="nm_komoku" Type="nvarchar" MaxLength="200" />
+    <Property Name="su_suryo" Type="int" />
+    <Property Name="kin_shiire_tanka" Type="decimal" Scale="2" />
+    <Property Name="dt_create" Type="datetimeoffset" />
+    <Property Name="cd_create" Type="nvarchar" MaxLength="10" />
+    <Property Name="dt_update" Type="datetimeoffset" />
+    <Property Name="cd_update" Type="nvarchar" MaxLength="10" />
+    <Property Name="ts" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="FixedMitsumori">
+    <Key>
+      <PropertyRef Name="no_fixed" />
+    </Key>
+    <Property Name="no_fixed" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nm_fixed" Type="nvarchar" MaxLength="200" />
+    <Property Name="cd_torihiki" Type="int" Nullable="false" />
+    <Property Name="cd_shiharai" Type="int" />
+    <Property Name="nm_hinmei" Type="nvarchar" MaxLength="200" />
+    <Property Name="biko" Type="nvarchar" MaxLength="200" />
+    <Property Name="flg_del" Type="bit" Nullable="false" />
+    <Property Name="dt_create" Type="datetimeoffset" />
+    <Property Name="cd_create" Type="nvarchar" MaxLength="10" />
+    <Property Name="dt_update" Type="datetimeoffset" />
+    <Property Name="cd_update" Type="nvarchar" MaxLength="10" />
+    <Property Name="ts" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Kentosho">
+    <Key>
+      <PropertyRef Name="no_kento" />
+    </Key>
+    <Property Name="no_kento" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="no_mitsumori" Type="int" Nullable="false" />
+    <Property Name="no_komoku" Type="int" />
+    <Property Name="cd_buhin" Type="int" Nullable="false" />
+    <Property Name="nm_komoku" Type="nvarchar" MaxLength="200" />
+    <Property Name="su_suryo" Type="int" />
+    <Property Name="kin_shiire_tanka" Type="decimal" Scale="2" />
+    <Property Name="dt_create" Type="datetimeoffset" />
+    <Property Name="cd_create" Type="nvarchar" MaxLength="10" />
+    <Property Name="dt_update" Type="datetimeoffset" />
+    <Property Name="cd_update" Type="nvarchar" MaxLength="10" />
+    <Property Name="ts" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="ma_maker">
+    <Key>
+      <PropertyRef Name="cd_maker" />
+    </Key>
+    <Property Name="cd_maker" Type="decimal" Nullable="false" Precision="2" />
+    <Property Name="nm_maker" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Mitsumori">
+    <Key>
+      <PropertyRef Name="no_mitsumori" />
+    </Key>
+    <Property Name="no_mitsumori" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="cd_torihiki" Type="int" Nullable="false" />
+    <Property Name="cd_shiharai" Type="int" />
+    <Property Name="nm_hinmei" Type="nvarchar" MaxLength="200" />
+    <Property Name="biko" Type="nvarchar" MaxLength="200" />
+    <Property Name="flg_del" Type="bit" Nullable="false" />
+    <Property Name="dt_create" Type="datetimeoffset" />
+    <Property Name="cd_create" Type="nvarchar" MaxLength="10" />
+    <Property Name="dt_update" Type="datetimeoffset" />
+    <Property Name="cd_update" Type="nvarchar" MaxLength="10" />
+    <Property Name="ts" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="MitsumoriDirect">
+    <Key>
+      <PropertyRef Name="no_mitsumori" />
+    </Key>
+    <Property Name="no_mitsumori" Type="int" Nullable="false" />
+    <Property Name="cd_torihiki" Type="int" Nullable="false" />
+    <Property Name="cd_shiharai" Type="int" />
+    <Property Name="nm_hinmei" Type="nvarchar" MaxLength="200" />
+    <Property Name="biko" Type="nvarchar" MaxLength="200" />
+    <Property Name="flg_del" Type="bit" Nullable="false" />
+    <Property Name="dt_create" Type="datetimeoffset" />
+    <Property Name="cd_create" Type="nvarchar" MaxLength="10" />
+    <Property Name="dt_update" Type="datetimeoffset" />
+    <Property Name="cd_update" Type="nvarchar" MaxLength="10" />
+    <Property Name="ts" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="no_news" />
+    </Key>
+    <Property Name="no_news" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nm_title" Type="nvarchar" MaxLength="255" />
+    <Property Name="nm_content" Type="nvarchar" />
+    <Property Name="dt_news" Type="datetime" Nullable="false" />
+    <Property Name="level" Type="nvarchar" MaxLength="10" />
+    <Property Name="dt_create" Type="datetimeoffset" />
+    <Property Name="cd_create" Type="nvarchar" MaxLength="10" />
+    <Property Name="dt_update" Type="datetimeoffset" />
+    <Property Name="cd_update" Type="nvarchar" MaxLength="10" />
+    <Property Name="ts" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="dt_product" />
+    </Key>
+    <Property Name="dt_product" Type="datetime" Nullable="false" />
+    <Property Name="su_shukka" Type="int" Nullable="false" />
+    <Property Name="su_keikaku" Type="int" Nullable="false" />
+    <Property Name="su_jisseki" Type="int" Nullable="false" />
+    <Property Name="su_zaiko" Type="int" Nullable="false" />
+    <Property Name="dt_create" Type="datetimeoffset" />
+    <Property Name="cd_create" Type="nvarchar" MaxLength="10" />
+    <Property Name="dt_update" Type="datetimeoffset" />
+    <Property Name="cd_update" Type="nvarchar" MaxLength="10" />
+    <Property Name="ts" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="ShiharaiJoken">
+    <Key>
+      <PropertyRef Name="cd_shiharai" />
+    </Key>
+    <Property Name="cd_shiharai" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nm_joken_shiharai" Type="nvarchar" MaxLength="80" />
+    <Property Name="dt_create" Type="datetimeoffset" />
+    <Property Name="cd_create" Type="nvarchar" MaxLength="10" />
+    <Property Name="dt_update" Type="datetimeoffset" />
+    <Property Name="cd_update" Type="nvarchar" MaxLength="10" />
+    <Property Name="ts" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Shinsei">
+    <Key>
+      <PropertyRef Name="no_system" />
+    </Key>
+    <Property Name="no_system" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="su_machi" Type="int" Nullable="false" />
+    <Property Name="su_zumi" Type="int" Nullable="false" />
+    <Property Name="dt_create" Type="datetimeoffset" />
+    <Property Name="cd_create" Type="nvarchar" MaxLength="10" />
+    <Property Name="dt_update" Type="datetimeoffset" />
+    <Property Name="cd_update" Type="nvarchar" MaxLength="10" />
+    <Property Name="ts" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Tenpu">
+    <Key>
+      <PropertyRef Name="no_tenpu" />
+    </Key>
+    <Property Name="no_tenpu" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="no_mitsumori" Type="int" Nullable="false" />
+    <Property Name="nm_file" Type="nvarchar" MaxLength="255" />
+    <Property Name="file" Type="image" />
+    <Property Name="dt_create" Type="datetimeoffset" />
+    <Property Name="cd_create" Type="nvarchar" MaxLength="10" />
+    <Property Name="dt_update" Type="datetimeoffset" />
+    <Property Name="cd_update" Type="nvarchar" MaxLength="10" />
+    <Property Name="ts" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Torihiki">
+    <Key>
+      <PropertyRef Name="cd_torihiki" />
+    </Key>
+    <Property Name="cd_torihiki" Type="int" Nullable="false" />
+    <Property Name="nm_torihiki" Type="nvarchar" MaxLength="100" />
+    <Property Name="nm_torihiki_en" Type="nvarchar" MaxLength="50" />
+    <Property Name="kbn_konyu" Type="nvarchar" MaxLength="1" />
+    <Property Name="nm_jusho" Type="nvarchar" MaxLength="160" />
+    <Property Name="no_yubin" Type="nvarchar" MaxLength="8" />
+    <Property Name="no_tel" Type="nvarchar" MaxLength="12" />
+    <Property Name="dt_create" Type="datetimeoffset" />
+    <Property Name="cd_create" Type="nvarchar" MaxLength="10" />
+    <Property Name="dt_update" Type="datetimeoffset" />
+    <Property Name="cd_update" Type="nvarchar" MaxLength="10" />
+    <Property Name="ts" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="tr_torihiki_buhin">
+    <Key>
+      <PropertyRef Name="dt_nohin" />
+      <PropertyRef Name="cd_torihiki" />
+      <PropertyRef Name="cd_buhin" />
+    </Key>
+    <Property Name="dt_nohin" Type="datetimeoffset" Nullable="false" />
+    <Property Name="cd_torihiki" Type="int" Nullable="false" />
+    <Property Name="cd_buhin" Type="int" Nullable="false" />
+    <Property Name="nm_buhin" Type="varchar" MaxLength="50" />
+    <Property Name="su_yotei" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="su_jisseki" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="su_hiritsu_yotei" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="su_hiritsu_jisseki" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="dt_create" Type="datetimeoffset" />
+    <Property Name="cd_create" Type="nvarchar" MaxLength="10" />
+    <Property Name="dt_update" Type="datetimeoffset" />
+    <Property Name="cd_update" Type="nvarchar" MaxLength="10" />
+    <Property Name="ts" Type="timestamp" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <Function Name="sp_SelectMitsumori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cd_shiharai" Type="int" Mode="In" />
+    <Parameter Name="cd_torihiki" Type="int" Mode="In" />
+    <Parameter Name="nm_hinmei" Type="nvarchar" Mode="In" />
+    <Parameter Name="skip" Type="int" Mode="In" />
+    <Parameter Name="top" Type="int" Mode="In" />
+    <Parameter Name="AllCount" Type="int" Mode="InOut" />
+  </Function>
+</Schema>

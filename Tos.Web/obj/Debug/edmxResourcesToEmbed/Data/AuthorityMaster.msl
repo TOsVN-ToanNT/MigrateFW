@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AuthorityMasterModelStoreContainer" CdmEntityContainer="AuthorityMasterEntities">
+    <EntitySetMapping Name="vw_shain_info">
+      <EntityTypeMapping TypeName="AuthorityMasterModel.vw_shain_info">
+        <MappingFragment StoreEntitySet="vw_shain_info">
+          <ScalarProperty Name="cd_kengen" ColumnName="cd_kengen" />
+          <ScalarProperty Name="type_kengen" ColumnName="type_kengen" />
+          <ScalarProperty Name="cd_system" ColumnName="cd_system" />
+          <ScalarProperty Name="nm_kaisha" ColumnName="nm_kaisha" />
+          <ScalarProperty Name="cd_kaisha" ColumnName="cd_kaisha" />
+          <ScalarProperty Name="nm_shozoku" ColumnName="nm_shozoku" />
+          <ScalarProperty Name="cd_shozoku_oi" ColumnName="cd_shozoku_oi" />
+          <ScalarProperty Name="cd_shozoku" ColumnName="cd_shozoku" />
+          <ScalarProperty Name="nm_shain" ColumnName="nm_shain" />
+          <ScalarProperty Name="cd_shain" ColumnName="cd_shain" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ma_shain_form">
+      <EntityTypeMapping TypeName="AuthorityMasterModel.ma_shain_form">
+        <MappingFragment StoreEntitySet="ma_shain_form">
+          <ScalarProperty Name="ts" ColumnName="ts" />
+          <ScalarProperty Name="dt_update" ColumnName="dt_update" />
+          <ScalarProperty Name="cd_update" ColumnName="cd_update" />
+          <ScalarProperty Name="dt_create" ColumnName="dt_create" />
+          <ScalarProperty Name="cd_create" ColumnName="cd_create" />
+          <ScalarProperty Name="cd_shozoku_oi" ColumnName="cd_shozoku_oi" />
+          <ScalarProperty Name="cd_shozoku" ColumnName="cd_shozoku" />
+          <ScalarProperty Name="nm_shain" ColumnName="nm_shain" />
+          <ScalarProperty Name="cd_shain" ColumnName="cd_shain" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_shain_info_form">
+      <EntityTypeMapping TypeName="AuthorityMasterModel.vw_shain_info_form">
+        <MappingFragment StoreEntitySet="vw_shain_info_form">
+          <ScalarProperty Name="ts" ColumnName="ts" />
+          <ScalarProperty Name="dt_update" ColumnName="dt_update" />
+          <ScalarProperty Name="cd_update" ColumnName="cd_update" />
+          <ScalarProperty Name="dt_create" ColumnName="dt_create" />
+          <ScalarProperty Name="cd_create" ColumnName="cd_create" />
+          <ScalarProperty Name="kbn_form" ColumnName="kbn_form" />
+          <ScalarProperty Name="cd_kengen" ColumnName="cd_kengen" />
+          <ScalarProperty Name="type_kengen" ColumnName="type_kengen" />
+          <ScalarProperty Name="cd_system" ColumnName="cd_system" />
+          <ScalarProperty Name="nm_kaisha" ColumnName="nm_kaisha" />
+          <ScalarProperty Name="cd_kaisha" ColumnName="cd_kaisha" />
+          <ScalarProperty Name="nm_shozoku" ColumnName="nm_shozoku" />
+          <ScalarProperty Name="cd_shozoku_union" ColumnName="cd_shozoku_union" />
+          <ScalarProperty Name="cd_shozoku_oi" ColumnName="cd_shozoku_oi" />
+          <ScalarProperty Name="cd_shozoku" ColumnName="cd_shozoku" />
+          <ScalarProperty Name="nm_shain" ColumnName="nm_shain" />
+          <ScalarProperty Name="cd_shain" ColumnName="cd_shain" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

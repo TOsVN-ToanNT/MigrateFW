@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AuthorityMasterModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="AuthorityMasterModelStoreContainer">
+          <EntitySet Name="ma_shain_form" EntityType="AuthorityMasterModel.Store.ma_shain_form" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="vw_shain_info" EntityType="AuthorityMasterModel.Store.vw_shain_info" store:Type="Views" store:Schema="dbo" store:Name="vw_shain_info">
+            <DefiningQuery>SELECT 
+      [vw_shain_info].[cd_shain] AS [cd_shain], 
+      [vw_shain_info].[nm_shain] AS [nm_shain], 
+      [vw_shain_info].[cd_shozoku] AS [cd_shozoku], 
+      [vw_shain_info].[cd_shozoku_oi] AS [cd_shozoku_oi], 
+      [vw_shain_info].[nm_shozoku] AS [nm_shozoku], 
+      [vw_shain_info].[cd_kaisha] AS [cd_kaisha], 
+      [vw_shain_info].[nm_kaisha] AS [nm_kaisha], 
+      [vw_shain_info].[cd_system] AS [cd_system], 
+      [vw_shain_info].[type_kengen] AS [type_kengen], 
+      [vw_shain_info].[cd_kengen] AS [cd_kengen]
+      FROM [dbo].[vw_shain_info] AS [vw_shain_info]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_shain_info_form" EntityType="AuthorityMasterModel.Store.vw_shain_info_form" store:Type="Views" store:Schema="dbo" store:Name="vw_shain_info_form">
+            <DefiningQuery>SELECT 
+      [vw_shain_info_form].[cd_shain] AS [cd_shain], 
+      [vw_shain_info_form].[nm_shain] AS [nm_shain], 
+      [vw_shain_info_form].[cd_shozoku] AS [cd_shozoku], 
+      [vw_shain_info_form].[cd_shozoku_oi] AS [cd_shozoku_oi], 
+      [vw_shain_info_form].[cd_shozoku_union] AS [cd_shozoku_union], 
+      [vw_shain_info_form].[nm_shozoku] AS [nm_shozoku], 
+      [vw_shain_info_form].[cd_kaisha] AS [cd_kaisha], 
+      [vw_shain_info_form].[nm_kaisha] AS [nm_kaisha], 
+      [vw_shain_info_form].[cd_system] AS [cd_system], 
+      [vw_shain_info_form].[type_kengen] AS [type_kengen], 
+      [vw_shain_info_form].[cd_kengen] AS [cd_kengen], 
+      [vw_shain_info_form].[kbn_form] AS [kbn_form], 
+      [vw_shain_info_form].[cd_create] AS [cd_create], 
+      [vw_shain_info_form].[dt_create] AS [dt_create], 
+      [vw_shain_info_form].[cd_update] AS [cd_update], 
+      [vw_shain_info_form].[dt_update] AS [dt_update], 
+      [vw_shain_info_form].[ts] AS [ts]
+      FROM [dbo].[vw_shain_info_form] AS [vw_shain_info_form]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <EntityType Name="ma_shain_form">
+          <Key>
+            <PropertyRef Name="cd_shain" />
+          </Key>
+          <Property Name="cd_shain" Type="decimal" Nullable="false" Precision="10" />
+          <Property Name="nm_shain" Type="varchar" MaxLength="50" />
+          <Property Name="cd_shozoku" Type="numeric" Precision="10" />
+          <Property Name="cd_shozoku_oi" Type="numeric" Precision="2" />
+          <Property Name="cd_create" Type="char" MaxLength="10" />
+          <Property Name="dt_create" Type="datetimeoffset" />
+          <Property Name="cd_update" Type="char" MaxLength="10" />
+          <Property Name="dt_update" Type="datetimeoffset" />
+          <Property Name="ts" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <!--生成中に見つかったエラー:
+      警告 6002: テーブル/ビュー 'TosAuthenticationSample.dbo.vw_shain_info' には主キーが定義されていません。主キーは推論され、定義は読み取り専用のテーブル/ビューとして作成されました。
+      -->
+        <EntityType Name="vw_shain_info">
+          <Key>
+            <PropertyRef Name="cd_shain" />
+            <PropertyRef Name="nm_shain" />
+            <PropertyRef Name="cd_shozoku" />
+            <PropertyRef Name="cd_shozoku_oi" />
+            <PropertyRef Name="cd_system" />
+            <PropertyRef Name="type_kengen" />
+            <PropertyRef Name="cd_kengen" />
+          </Key>
+          <Property Name="cd_shain" Type="decimal" Nullable="false" Precision="10" />
+          <Property Name="nm_shain" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="cd_shozoku" Type="numeric" Nullable="false" Precision="10" />
+          <Property Name="cd_shozoku_oi" Type="numeric" Nullable="false" Precision="2" />
+          <Property Name="nm_shozoku" Type="varchar" MaxLength="50" />
+          <Property Name="cd_kaisha" Type="decimal" Precision="4" />
+          <Property Name="nm_kaisha" Type="varchar" MaxLength="20" />
+          <Property Name="cd_system" Type="int" Nullable="false" />
+          <Property Name="type_kengen" Type="int" Nullable="false" />
+          <Property Name="cd_kengen" Type="int" Nullable="false" />
+        </EntityType>
+        <!--生成中に見つかったエラー:
+      警告 6002: テーブル/ビュー 'TosAuthenticationSample.dbo.vw_shain_info_form' には主キーが定義されていません。主キーは推論され、定義は読み取り専用のテーブル/ビューとして作成されました。
+      -->
+        <EntityType Name="vw_shain_info_form">
+          <Key>
+            <PropertyRef Name="cd_shain" />
+            <PropertyRef Name="cd_system" />
+            <PropertyRef Name="type_kengen" />
+            <PropertyRef Name="cd_kengen" />
+            <PropertyRef Name="kbn_form" />
+          </Key>
+          <Property Name="cd_shain" Type="decimal" Nullable="false" Precision="10" />
+          <Property Name="nm_shain" Type="varchar" MaxLength="50" />
+          <Property Name="cd_shozoku" Type="numeric" Precision="10" />
+          <Property Name="cd_shozoku_oi" Type="numeric" Precision="2" />
+          <Property Name="cd_shozoku_union" Type="varchar" MaxLength="13" />
+          <Property Name="nm_shozoku" Type="varchar" MaxLength="50" />
+          <Property Name="cd_kaisha" Type="decimal" Precision="4" />
+          <Property Name="nm_kaisha" Type="varchar" MaxLength="20" />
+          <Property Name="cd_system" Type="int" Nullable="false" />
+          <Property Name="type_kengen" Type="int" Nullable="false" />
+          <Property Name="cd_kengen" Type="int" Nullable="false" />
+          <Property Name="kbn_form" Type="int" Nullable="false" />
+          <Property Name="cd_create" Type="char" MaxLength="10" />
+          <Property Name="dt_create" Type="datetimeoffset" />
+          <Property Name="cd_update" Type="char" MaxLength="10" />
+          <Property Name="dt_update" Type="datetimeoffset" />
+          <Property Name="ts" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AuthorityMasterModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="AuthorityMasterEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="vw_shain_info" EntityType="AuthorityMasterModel.vw_shain_info" />
+          <EntitySet Name="ma_shain_form" EntityType="AuthorityMasterModel.ma_shain_form" />
+          <EntitySet Name="vw_shain_info_form" EntityType="AuthorityMasterModel.vw_shain_info_form" />
+          </EntityContainer>
+        <EntityType Name="vw_shain_info">
+          <Key>
+            <PropertyRef Name="cd_shain" />
+            <PropertyRef Name="nm_shain" />
+            <PropertyRef Name="cd_shozoku" />
+            <PropertyRef Name="cd_shozoku_oi" />
+            <PropertyRef Name="cd_system" />
+            <PropertyRef Name="type_kengen" />
+            <PropertyRef Name="cd_kengen" />
+          </Key>
+          <Property Type="Decimal" Name="cd_shain" Nullable="false" Precision="10" Scale="0" />
+          <Property Type="String" Name="nm_shain" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="cd_shozoku" Nullable="false" Precision="10" Scale="0" />
+          <Property Type="Decimal" Name="cd_shozoku_oi" Nullable="false" Precision="2" Scale="0" />
+          <Property Type="String" Name="nm_shozoku" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="cd_kaisha" Precision="4" Scale="0" />
+          <Property Type="String" Name="nm_kaisha" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="cd_system" Nullable="false" />
+          <Property Type="Int32" Name="type_kengen" Nullable="false" />
+          <Property Type="Int32" Name="cd_kengen" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ma_shain_form">
+          <Key>
+            <PropertyRef Name="cd_shain" />
+          </Key>
+          <Property Type="Decimal" Name="cd_shain" Nullable="false" Precision="10" Scale="0" />
+          <Property Type="String" Name="nm_shain" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="cd_shozoku" Precision="10" Scale="0" />
+          <Property Type="Decimal" Name="cd_shozoku_oi" Precision="2" Scale="0" />
+          <Property Type="String" Name="cd_create" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Type="DateTimeOffset" Name="dt_create" Precision="7" />
+          <Property Type="String" Name="cd_update" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Type="DateTimeOffset" Name="dt_update" Precision="7" />
+          <Property Type="Binary" Name="ts" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+        </EntityType>
+        <EntityType Name="vw_shain_info_form">
+          <Key>
+            <PropertyRef Name="cd_shain" />
+            <PropertyRef Name="cd_system" />
+            <PropertyRef Name="type_kengen" />
+            <PropertyRef Name="cd_kengen" />
+            <PropertyRef Name="kbn_form" />
+          </Key>
+          <Property Type="Decimal" Name="cd_shain" Nullable="false" Precision="10" Scale="0" />
+          <Property Type="String" Name="nm_shain" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="cd_shozoku" Precision="10" Scale="0" />
+          <Property Type="Decimal" Name="cd_shozoku_oi" Precision="2" Scale="0" />
+          <Property Type="String" Name="cd_shozoku_union" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nm_shozoku" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="cd_kaisha" Precision="4" Scale="0" />
+          <Property Type="String" Name="nm_kaisha" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="cd_system" Nullable="false" />
+          <Property Type="Int32" Name="type_kengen" Nullable="false" />
+          <Property Type="Int32" Name="cd_kengen" Nullable="false" />
+          <Property Type="Int32" Name="kbn_form" Nullable="false" />
+          <Property Type="String" Name="cd_create" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Type="DateTimeOffset" Name="dt_create" Precision="7" />
+          <Property Type="String" Name="cd_update" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Type="DateTimeOffset" Name="dt_update" Precision="7" />
+          <Property Type="Binary" Name="ts" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AuthorityMasterModelStoreContainer" CdmEntityContainer="AuthorityMasterEntities">
+          <EntitySetMapping Name="vw_shain_info">
+            <EntityTypeMapping TypeName="AuthorityMasterModel.vw_shain_info">
+              <MappingFragment StoreEntitySet="vw_shain_info">
+                <ScalarProperty Name="cd_kengen" ColumnName="cd_kengen" />
+                <ScalarProperty Name="type_kengen" ColumnName="type_kengen" />
+                <ScalarProperty Name="cd_system" ColumnName="cd_system" />
+                <ScalarProperty Name="nm_kaisha" ColumnName="nm_kaisha" />
+                <ScalarProperty Name="cd_kaisha" ColumnName="cd_kaisha" />
+                <ScalarProperty Name="nm_shozoku" ColumnName="nm_shozoku" />
+                <ScalarProperty Name="cd_shozoku_oi" ColumnName="cd_shozoku_oi" />
+                <ScalarProperty Name="cd_shozoku" ColumnName="cd_shozoku" />
+                <ScalarProperty Name="nm_shain" ColumnName="nm_shain" />
+                <ScalarProperty Name="cd_shain" ColumnName="cd_shain" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ma_shain_form">
+            <EntityTypeMapping TypeName="AuthorityMasterModel.ma_shain_form">
+              <MappingFragment StoreEntitySet="ma_shain_form">
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="dt_update" ColumnName="dt_update" />
+                <ScalarProperty Name="cd_update" ColumnName="cd_update" />
+                <ScalarProperty Name="dt_create" ColumnName="dt_create" />
+                <ScalarProperty Name="cd_create" ColumnName="cd_create" />
+                <ScalarProperty Name="cd_shozoku_oi" ColumnName="cd_shozoku_oi" />
+                <ScalarProperty Name="cd_shozoku" ColumnName="cd_shozoku" />
+                <ScalarProperty Name="nm_shain" ColumnName="nm_shain" />
+                <ScalarProperty Name="cd_shain" ColumnName="cd_shain" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_shain_info_form">
+            <EntityTypeMapping TypeName="AuthorityMasterModel.vw_shain_info_form">
+              <MappingFragment StoreEntitySet="vw_shain_info_form">
+                <ScalarProperty Name="ts" ColumnName="ts" />
+                <ScalarProperty Name="dt_update" ColumnName="dt_update" />
+                <ScalarProperty Name="cd_update" ColumnName="cd_update" />
+                <ScalarProperty Name="dt_create" ColumnName="dt_create" />
+                <ScalarProperty Name="cd_create" ColumnName="cd_create" />
+                <ScalarProperty Name="kbn_form" ColumnName="kbn_form" />
+                <ScalarProperty Name="cd_kengen" ColumnName="cd_kengen" />
+                <ScalarProperty Name="type_kengen" ColumnName="type_kengen" />
+                <ScalarProperty Name="cd_system" ColumnName="cd_system" />
+                <ScalarProperty Name="nm_kaisha" ColumnName="nm_kaisha" />
+                <ScalarProperty Name="cd_kaisha" ColumnName="cd_kaisha" />
+                <ScalarProperty Name="nm_shozoku" ColumnName="nm_shozoku" />
+                <ScalarProperty Name="cd_shozoku_union" ColumnName="cd_shozoku_union" />
+                <ScalarProperty Name="cd_shozoku_oi" ColumnName="cd_shozoku_oi" />
+                <ScalarProperty Name="cd_shozoku" ColumnName="cd_shozoku" />
+                <ScalarProperty Name="nm_shain" ColumnName="nm_shain" />
+                <ScalarProperty Name="cd_shain" ColumnName="cd_shain" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="なし" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

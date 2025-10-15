@@ -1,0 +1,13 @@
+/** 
+ * TODO: 各アプリケーション固有のスタイルを追加します。
+ */
+/*開発中アプリケーションのヘッダー部背景色取り付け用クラス　
+クラス名はSettings.settings/Web.XXXXX.configで指定します*/
+.deploy-debug
+{
+    background-color: #CEF6CE;
+}
+.deploy-test 
+{
+    background-color: #F8E0F7;
+}

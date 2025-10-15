@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SampleModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="SampleEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Buhin" EntityType="SampleModel.Buhin" />
+    <EntitySet Name="BuhinCalendar" EntityType="SampleModel.BuhinCalendar" />
+    <EntitySet Name="FixedKentosho" EntityType="SampleModel.FixedKentosho" />
+    <EntitySet Name="FixedMitsumori" EntityType="SampleModel.FixedMitsumori" />
+    <EntitySet Name="Kentosho" EntityType="SampleModel.Kentosho" />
+    <EntitySet Name="ma_maker" EntityType="SampleModel.ma_maker" />
+    <EntitySet Name="Mitsumori" EntityType="SampleModel.Mitsumori" />
+    <EntitySet Name="News" EntityType="SampleModel.News" />
+    <EntitySet Name="Product" EntityType="SampleModel.Product" />
+    <EntitySet Name="Shinsei" EntityType="SampleModel.Shinsei" />
+    <EntitySet Name="Tenpu" EntityType="SampleModel.Tenpu" />
+    <EntitySet Name="Torihiki" EntityType="SampleModel.Torihiki" />
+    <EntitySet Name="tr_torihiki_buhin" EntityType="SampleModel.tr_torihiki_buhin" />
+    <FunctionImport Name="sp_SelectMitsumori" ReturnType="Collection(SampleModel.sp_SelectMitsumori_Result)">
+      <Parameter Name="cd_shiharai" Mode="In" Type="Int32" />
+      <Parameter Name="cd_torihiki" Mode="In" Type="Int32" />
+      <Parameter Name="nm_hinmei" Mode="In" Type="String" />
+      <Parameter Name="skip" Mode="In" Type="Int32" />
+      <Parameter Name="top" Mode="In" Type="Int32" />
+      <Parameter Name="AllCount" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="ShiharaiJoken" EntityType="SampleModel.ShiharaiJoken" />
+    <EntitySet Name="MitsumoriDirect" EntityType="SampleModel.MitsumoriDirect" />
+  </EntityContainer>
+  <EntityType Name="Buhin">
+    <Key>
+      <PropertyRef Name="cd_buhin" />
+    </Key>
+    <Property Name="cd_buhin" Type="Int32" Nullable="false" />
+    <Property Name="nm_buhin" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="kin_shiire" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="nm_tani" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+    <Property Name="dt_create" Type="DateTimeOffset" Precision="7" />
+    <Property Name="cd_create" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="dt_update" Type="DateTimeOffset" Precision="7" />
+    <Property Name="cd_update" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="ts" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="BuhinCalendar">
+    <Key>
+      <PropertyRef Name="no_buhin_calendar" />
+    </Key>
+    <Property Name="no_buhin_calendar" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cd_buhin" Type="Int32" Nullable="false" />
+    <Property Name="dt_sakusei" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="nm_komoku" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="su_suryo" Type="Int32" />
+    <Property Name="kin_shiire_tanka" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="dt_create" Type="DateTimeOffset" Precision="7" />
+    <Property Name="cd_create" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="dt_update" Type="DateTimeOffset" Precision="7" />
+    <Property Name="cd_update" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="ts" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+  </EntityType>
+  <EntityType Name="FixedKentosho">
+    <Key>
+      <PropertyRef Name="no_kento" />
+    </Key>
+    <Property Name="no_kento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="no_fixed" Type="Int32" Nullable="false" />
+    <Property Name="no_komoku" Type="Int32" />
+    <Property Name="cd_buhin" Type="Int32" Nullable="false" />
+    <Property Name="nm_komoku" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="su_suryo" Type="Int32" />
+    <Property Name="kin_shiire_tanka" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="dt_create" Type="DateTimeOffset" Precision="7" />
+    <Property Name="cd_create" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="dt_update" Type="DateTimeOffset" Precision="7" />
+    <Property Name="cd_update" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="ts" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="FixedMitsumori">
+    <Key>
+      <PropertyRef Name="no_fixed" />
+    </Key>
+    <Property Name="no_fixed" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nm_fixed" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="cd_torihiki" Type="Int32" Nullable="false" />
+    <Property Name="cd_shiharai" Type="Int32" />
+    <Property Name="nm_hinmei" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="biko" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="flg_del" Type="Boolean" Nullable="false" />
+    <Property Name="dt_create" Type="DateTimeOffset" Precision="7" />
+    <Property Name="cd_create" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="dt_update" Type="DateTimeOffset" Precision="7" />
+    <Property Name="cd_update" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="ts" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Kentosho">
+    <Key>
+      <PropertyRef Name="no_kento" />
+    </Key>
+    <Property Name="no_kento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="no_mitsumori" Type="Int32" Nullable="false" />
+    <Property Name="no_komoku" Type="Int32" />
+    <Property Name="cd_buhin" Type="Int32" Nullable="false" />
+    <Property Name="nm_komoku" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="su_suryo" Type="Int32" />
+    <Property Name="kin_shiire_tanka" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="dt_create" Type="DateTimeOffset" Precision="7" />
+    <Property Name="cd_create" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="dt_update" Type="DateTimeOffset" Precision="7" />
+    <Property Name="cd_update" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="ts" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+  </EntityType>
+  <EntityType Name="ma_maker">
+    <Key>
+      <PropertyRef Name="cd_maker" />
+    </Key>
+    <Property Name="cd_maker" Type="Decimal" Nullable="false" Precision="2" Scale="0" />
+    <Property Name="nm_maker" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Mitsumori">
+    <Key>
+      <PropertyRef Name="no_mitsumori" />
+    </Key>
+    <Property Name="no_mitsumori" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cd_torihiki" Type="Int32" Nullable="false" />
+    <Property Name="cd_shiharai" Type="Int32" />
+    <Property Name="nm_hinmei" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="biko" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="flg_del" Type="Boolean" Nullable="false" />
+    <Property Name="dt_create" Type="DateTimeOffset" Precision="7" />
+    <Property Name="cd_create" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="dt_update" Type="DateTimeOffset" Precision="7" />
+    <Property Name="cd_update" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="ts" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+  </EntityType>
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="no_news" />
+    </Key>
+    <Property Name="no_news" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nm_title" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="nm_content" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="dt_news" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="level" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="dt_create" Type="DateTimeOffset" Precision="7" />
+    <Property Name="cd_create" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="dt_update" Type="DateTimeOffset" Precision="7" />
+    <Property Name="cd_update" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="ts" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="dt_product" />
+    </Key>
+    <Property Name="dt_product" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="su_shukka" Type="Int32" Nullable="false" />
+    <Property Name="su_keikaku" Type="Int32" Nullable="false" />
+    <Property Name="su_jisseki" Type="Int32" Nullable="false" />
+    <Property Name="su_zaiko" Type="Int32" Nullable="false" />
+    <Property Name="dt_create" Type="DateTimeOffset" Precision="7" />
+    <Property Name="cd_create" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="dt_update" Type="DateTimeOffset" Precision="7" />
+    <Property Name="cd_update" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="ts" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+  </EntityType>
+  <EntityType Name="Shinsei">
+    <Key>
+      <PropertyRef Name="no_system" />
+    </Key>
+    <Property Name="no_system" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="su_machi" Type="Int32" Nullable="false" />
+    <Property Name="su_zumi" Type="Int32" Nullable="false" />
+    <Property Name="dt_create" Type="DateTimeOffset" Precision="7" />
+    <Property Name="cd_create" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="dt_update" Type="DateTimeOffset" Precision="7" />
+    <Property Name="cd_update" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="ts" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Tenpu">
+    <Key>
+      <PropertyRef Name="no_tenpu" />
+    </Key>
+    <Property Name="no_tenpu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="no_mitsumori" Type="Int32" Nullable="false" />
+    <Property Name="nm_file" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="file" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="dt_create" Type="DateTimeOffset" Precision="7" />
+    <Property Name="cd_create" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="dt_update" Type="DateTimeOffset" Precision="7" />
+    <Property Name="cd_update" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="ts" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+  </EntityType>
+  <EntityType Name="Torihiki">
+    <Key>
+      <PropertyRef Name="cd_torihiki" />
+    </Key>
+    <Property Name="cd_torihiki" Type="Int32" Nullable="false" />
+    <Property Name="nm_torihiki" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="nm_torihiki_en" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="kbn_konyu" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
+    <Property Name="nm_jusho" Type="String" MaxLength="160" Unicode="true" FixedLength="false" />
+    <Property Name="no_yubin" Type="String" MaxLength="8" Unicode="true" FixedLength="false" />
+    <Property Name="no_tel" Type="String" MaxLength="12" Unicode="true" FixedLength="false" />
+    <Property Name="dt_create" Type="DateTimeOffset" Precision="7" />
+    <Property Name="cd_create" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="dt_update" Type="DateTimeOffset" Precision="7" />
+    <Property Name="cd_update" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="ts" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+  </EntityType>
+  <EntityType Name="tr_torihiki_buhin">
+    <Key>
+      <PropertyRef Name="dt_nohin" />
+      <PropertyRef Name="cd_torihiki" />
+      <PropertyRef Name="cd_buhin" />
+    </Key>
+    <Property Name="dt_nohin" Type="DateTimeOffset" Nullable="false" Precision="7" />
+    <Property Name="cd_torihiki" Type="Int32" Nullable="false" />
+    <Property Name="cd_buhin" Type="Int32" Nullable="false" />
+    <Property Name="nm_buhin" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="su_yotei" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="su_jisseki" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="su_hiritsu_yotei" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="su_hiritsu_jisseki" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="dt_create" Type="DateTimeOffset" Precision="7" />
+    <Property Name="cd_create" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="dt_update" Type="DateTimeOffset" Precision="7" />
+    <Property Name="cd_update" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="ts" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+  </EntityType>
+  <ComplexType Name="sp_SelectMitsumori_Result">
+    <Property Type="Int32" Name="no_mitsumori" Nullable="false" />
+    <Property Type="Int32" Name="cd_torihiki" Nullable="false" />
+    <Property Type="Int32" Name="cd_shiharai" Nullable="true" />
+    <Property Type="String" Name="nm_hinmei" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="biko" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="flg_del" Nullable="false" />
+    <Property Type="DateTimeOffset" Name="dt_create" Nullable="true" />
+    <Property Type="String" Name="cd_create" Nullable="true" MaxLength="10" />
+    <Property Type="DateTimeOffset" Name="dt_update" Nullable="true" />
+    <Property Type="String" Name="cd_update" Nullable="true" MaxLength="10" />
+    <Property Type="Binary" Name="ts" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <EntityType Name="ShiharaiJoken">
+    <Key>
+      <PropertyRef Name="cd_shiharai" />
+    </Key>
+    <Property Type="Int32" Name="cd_shiharai" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="nm_joken_shiharai" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Type="DateTimeOffset" Name="dt_create" Precision="7" />
+    <Property Type="String" Name="cd_create" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="DateTimeOffset" Name="dt_update" Precision="7" />
+    <Property Type="String" Name="cd_update" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="Binary" Name="ts" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="MitsumoriDirect">
+    <Key>
+      <PropertyRef Name="no_mitsumori" />
+    </Key>
+    <Property Type="Int32" Name="no_mitsumori" Nullable="false" />
+    <Property Type="Int32" Name="cd_torihiki" Nullable="false" />
+    <Property Type="Int32" Name="cd_shiharai" />
+    <Property Type="String" Name="nm_hinmei" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="biko" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="flg_del" Nullable="false" />
+    <Property Type="DateTimeOffset" Name="dt_create" Precision="7" />
+    <Property Type="String" Name="cd_create" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="DateTimeOffset" Name="dt_update" Precision="7" />
+    <Property Type="String" Name="cd_update" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="Binary" Name="ts" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+</Schema>

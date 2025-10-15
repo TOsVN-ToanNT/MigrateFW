@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AuthorityMasterModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="AuthorityMasterEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="vw_shain_info" EntityType="AuthorityMasterModel.vw_shain_info" />
+    <EntitySet Name="ma_shain_form" EntityType="AuthorityMasterModel.ma_shain_form" />
+    <EntitySet Name="vw_shain_info_form" EntityType="AuthorityMasterModel.vw_shain_info_form" />
+  </EntityContainer>
+  <EntityType Name="vw_shain_info">
+    <Key>
+      <PropertyRef Name="cd_shain" />
+      <PropertyRef Name="nm_shain" />
+      <PropertyRef Name="cd_shozoku" />
+      <PropertyRef Name="cd_shozoku_oi" />
+      <PropertyRef Name="cd_system" />
+      <PropertyRef Name="type_kengen" />
+      <PropertyRef Name="cd_kengen" />
+    </Key>
+    <Property Type="Decimal" Name="cd_shain" Nullable="false" Precision="10" Scale="0" />
+    <Property Type="String" Name="nm_shain" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="cd_shozoku" Nullable="false" Precision="10" Scale="0" />
+    <Property Type="Decimal" Name="cd_shozoku_oi" Nullable="false" Precision="2" Scale="0" />
+    <Property Type="String" Name="nm_shozoku" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="cd_kaisha" Precision="4" Scale="0" />
+    <Property Type="String" Name="nm_kaisha" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="cd_system" Nullable="false" />
+    <Property Type="Int32" Name="type_kengen" Nullable="false" />
+    <Property Type="Int32" Name="cd_kengen" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ma_shain_form">
+    <Key>
+      <PropertyRef Name="cd_shain" />
+    </Key>
+    <Property Type="Decimal" Name="cd_shain" Nullable="false" Precision="10" Scale="0" />
+    <Property Type="String" Name="nm_shain" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="cd_shozoku" Precision="10" Scale="0" />
+    <Property Type="Decimal" Name="cd_shozoku_oi" Precision="2" Scale="0" />
+    <Property Type="String" Name="cd_create" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Type="DateTimeOffset" Name="dt_create" Precision="7" />
+    <Property Type="String" Name="cd_update" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Type="DateTimeOffset" Name="dt_update" Precision="7" />
+    <Property Type="Binary" Name="ts" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+  </EntityType>
+  <EntityType Name="vw_shain_info_form">
+    <Key>
+      <PropertyRef Name="cd_shain" />
+      <PropertyRef Name="cd_system" />
+      <PropertyRef Name="type_kengen" />
+      <PropertyRef Name="cd_kengen" />
+      <PropertyRef Name="kbn_form" />
+    </Key>
+    <Property Type="Decimal" Name="cd_shain" Nullable="false" Precision="10" Scale="0" />
+    <Property Type="String" Name="nm_shain" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="cd_shozoku" Precision="10" Scale="0" />
+    <Property Type="Decimal" Name="cd_shozoku_oi" Precision="2" Scale="0" />
+    <Property Type="String" Name="cd_shozoku_union" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="nm_shozoku" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="cd_kaisha" Precision="4" Scale="0" />
+    <Property Type="String" Name="nm_kaisha" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="cd_system" Nullable="false" />
+    <Property Type="Int32" Name="type_kengen" Nullable="false" />
+    <Property Type="Int32" Name="cd_kengen" Nullable="false" />
+    <Property Type="Int32" Name="kbn_form" Nullable="false" />
+    <Property Type="String" Name="cd_create" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Type="DateTimeOffset" Name="dt_create" Precision="7" />
+    <Property Type="String" Name="cd_update" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Type="DateTimeOffset" Name="dt_update" Precision="7" />
+    <Property Type="Binary" Name="ts" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+</Schema>

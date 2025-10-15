@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SampleModelStoreContainer" CdmEntityContainer="SampleEntities">
+    <EntitySetMapping Name="Buhin">
+      <EntityTypeMapping TypeName="SampleModel.Buhin">
+        <MappingFragment StoreEntitySet="Buhin">
+          <ScalarProperty Name="cd_buhin" ColumnName="cd_buhin" />
+          <ScalarProperty Name="nm_buhin" ColumnName="nm_buhin" />
+          <ScalarProperty Name="kin_shiire" ColumnName="kin_shiire" />
+          <ScalarProperty Name="nm_tani" ColumnName="nm_tani" />
+          <ScalarProperty Name="dt_create" ColumnName="dt_create" />
+          <ScalarProperty Name="cd_create" ColumnName="cd_create" />
+          <ScalarProperty Name="dt_update" ColumnName="dt_update" />
+          <ScalarProperty Name="cd_update" ColumnName="cd_update" />
+          <ScalarProperty Name="ts" ColumnName="ts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BuhinCalendar">
+      <EntityTypeMapping TypeName="SampleModel.BuhinCalendar">
+        <MappingFragment StoreEntitySet="BuhinCalendar">
+          <ScalarProperty Name="no_buhin_calendar" ColumnName="no_buhin_calendar" />
+          <ScalarProperty Name="cd_buhin" ColumnName="cd_buhin" />
+          <ScalarProperty Name="dt_sakusei" ColumnName="dt_sakusei" />
+          <ScalarProperty Name="nm_komoku" ColumnName="nm_komoku" />
+          <ScalarProperty Name="su_suryo" ColumnName="su_suryo" />
+          <ScalarProperty Name="kin_shiire_tanka" ColumnName="kin_shiire_tanka" />
+          <ScalarProperty Name="dt_create" ColumnName="dt_create" />
+          <ScalarProperty Name="cd_create" ColumnName="cd_create" />
+          <ScalarProperty Name="dt_update" ColumnName="dt_update" />
+          <ScalarProperty Name="cd_update" ColumnName="cd_update" />
+          <ScalarProperty Name="ts" ColumnName="ts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FixedKentosho">
+      <EntityTypeMapping TypeName="SampleModel.FixedKentosho">
+        <MappingFragment StoreEntitySet="FixedKentosho">
+          <ScalarProperty Name="no_kento" ColumnName="no_kento" />
+          <ScalarProperty Name="no_fixed" ColumnName="no_fixed" />
+          <ScalarProperty Name="no_komoku" ColumnName="no_komoku" />
+          <ScalarProperty Name="cd_buhin" ColumnName="cd_buhin" />
+          <ScalarProperty Name="nm_komoku" ColumnName="nm_komoku" />
+          <ScalarProperty Name="su_suryo" ColumnName="su_suryo" />
+          <ScalarProperty Name="kin_shiire_tanka" ColumnName="kin_shiire_tanka" />
+          <ScalarProperty Name="dt_create" ColumnName="dt_create" />
+          <ScalarProperty Name="cd_create" ColumnName="cd_create" />
+          <ScalarProperty Name="dt_update" ColumnName="dt_update" />
+          <ScalarProperty Name="cd_update" ColumnName="cd_update" />
+          <ScalarProperty Name="ts" ColumnName="ts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FixedMitsumori">
+      <EntityTypeMapping TypeName="SampleModel.FixedMitsumori">
+        <MappingFragment StoreEntitySet="FixedMitsumori">
+          <ScalarProperty Name="no_fixed" ColumnName="no_fixed" />
+          <ScalarProperty Name="nm_fixed" ColumnName="nm_fixed" />
+          <ScalarProperty Name="cd_torihiki" ColumnName="cd_torihiki" />
+          <ScalarProperty Name="cd_shiharai" ColumnName="cd_shiharai" />
+          <ScalarProperty Name="nm_hinmei" ColumnName="nm_hinmei" />
+          <ScalarProperty Name="biko" ColumnName="biko" />
+          <ScalarProperty Name="flg_del" ColumnName="flg_del" />
+          <ScalarProperty Name="dt_create" ColumnName="dt_create" />
+          <ScalarProperty Name="cd_create" ColumnName="cd_create" />
+          <ScalarProperty Name="dt_update" ColumnName="dt_update" />
+          <ScalarProperty Name="cd_update" ColumnName="cd_update" />
+          <ScalarProperty Name="ts" ColumnName="ts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kentosho">
+      <EntityTypeMapping TypeName="SampleModel.Kentosho">
+        <MappingFragment StoreEntitySet="Kentosho">
+          <ScalarProperty Name="no_kento" ColumnName="no_kento" />
+          <ScalarProperty Name="no_mitsumori" ColumnName="no_mitsumori" />
+          <ScalarProperty Name="no_komoku" ColumnName="no_komoku" />
+          <ScalarProperty Name="cd_buhin" ColumnName="cd_buhin" />
+          <ScalarProperty Name="nm_komoku" ColumnName="nm_komoku" />
+          <ScalarProperty Name="su_suryo" ColumnName="su_suryo" />
+          <ScalarProperty Name="kin_shiire_tanka" ColumnName="kin_shiire_tanka" />
+          <ScalarProperty Name="dt_create" ColumnName="dt_create" />
+          <ScalarProperty Name="cd_create" ColumnName="cd_create" />
+          <ScalarProperty Name="dt_update" ColumnName="dt_update" />
+          <ScalarProperty Name="cd_update" ColumnName="cd_update" />
+          <ScalarProperty Name="ts" ColumnName="ts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ma_maker">
+      <EntityTypeMapping TypeName="SampleModel.ma_maker">
+        <MappingFragment StoreEntitySet="ma_maker">
+          <ScalarProperty Name="cd_maker" ColumnName="cd_maker" />
+          <ScalarProperty Name="nm_maker" ColumnName="nm_maker" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mitsumori">
+      <EntityTypeMapping TypeName="SampleModel.Mitsumori">
+        <MappingFragment StoreEntitySet="Mitsumori">
+          <ScalarProperty Name="no_mitsumori" ColumnName="no_mitsumori" />
+          <ScalarProperty Name="cd_torihiki" ColumnName="cd_torihiki" />
+          <ScalarProperty Name="cd_shiharai" ColumnName="cd_shiharai" />
+          <ScalarProperty Name="nm_hinmei" ColumnName="nm_hinmei" />
+          <ScalarProperty Name="biko" ColumnName="biko" />
+          <ScalarProperty Name="flg_del" ColumnName="flg_del" />
+          <ScalarProperty Name="dt_create" ColumnName="dt_create" />
+          <ScalarProperty Name="cd_create" ColumnName="cd_create" />
+          <ScalarProperty Name="dt_update" ColumnName="dt_update" />
+          <ScalarProperty Name="cd_update" ColumnName="cd_update" />
+          <ScalarProperty Name="ts" ColumnName="ts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="News">
+      <EntityTypeMapping TypeName="SampleModel.News">
+        <MappingFragment StoreEntitySet="News">
+          <ScalarProperty Name="no_news" ColumnName="no_news" />
+          <ScalarProperty Name="nm_title" ColumnName="nm_title" />
+          <ScalarProperty Name="nm_content" ColumnName="nm_content" />
+          <ScalarProperty Name="dt_news" ColumnName="dt_news" />
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="dt_create" ColumnName="dt_create" />
+          <ScalarProperty Name="cd_create" ColumnName="cd_create" />
+          <ScalarProperty Name="dt_update" ColumnName="dt_update" />
+          <ScalarProperty Name="cd_update" ColumnName="cd_update" />
+          <ScalarProperty Name="ts" ColumnName="ts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product">
+      <EntityTypeMapping TypeName="SampleModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="dt_product" ColumnName="dt_product" />
+          <ScalarProperty Name="su_shukka" ColumnName="su_shukka" />
+          <ScalarProperty Name="su_keikaku" ColumnName="su_keikaku" />
+          <ScalarProperty Name="su_jisseki" ColumnName="su_jisseki" />
+          <ScalarProperty Name="su_zaiko" ColumnName="su_zaiko" />
+          <ScalarProperty Name="dt_create" ColumnName="dt_create" />
+          <ScalarProperty Name="cd_create" ColumnName="cd_create" />
+          <ScalarProperty Name="dt_update" ColumnName="dt_update" />
+          <ScalarProperty Name="cd_update" ColumnName="cd_update" />
+          <ScalarProperty Name="ts" ColumnName="ts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shinsei">
+      <EntityTypeMapping TypeName="SampleModel.Shinsei">
+        <MappingFragment StoreEntitySet="Shinsei">
+          <ScalarProperty Name="no_system" ColumnName="no_system" />
+          <ScalarProperty Name="su_machi" ColumnName="su_machi" />
+          <ScalarProperty Name="su_zumi" ColumnName="su_zumi" />
+          <ScalarProperty Name="dt_create" ColumnName="dt_create" />
+          <ScalarProperty Name="cd_create" ColumnName="cd_create" />
+          <ScalarProperty Name="dt_update" ColumnName="dt_update" />
+          <ScalarProperty Name="cd_update" ColumnName="cd_update" />
+          <ScalarProperty Name="ts" ColumnName="ts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tenpu">
+      <EntityTypeMapping TypeName="SampleModel.Tenpu">
+        <MappingFragment StoreEntitySet="Tenpu">
+          <ScalarProperty Name="no_tenpu" ColumnName="no_tenpu" />
+          <ScalarProperty Name="no_mitsumori" ColumnName="no_mitsumori" />
+          <ScalarProperty Name="nm_file" ColumnName="nm_file" />
+          <ScalarProperty Name="file" ColumnName="file" />
+          <ScalarProperty Name="dt_create" ColumnName="dt_create" />
+          <ScalarProperty Name="cd_create" ColumnName="cd_create" />
+          <ScalarProperty Name="dt_update" ColumnName="dt_update" />
+          <ScalarProperty Name="cd_update" ColumnName="cd_update" />
+          <ScalarProperty Name="ts" ColumnName="ts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Torihiki">
+      <EntityTypeMapping TypeName="SampleModel.Torihiki">
+        <MappingFragment StoreEntitySet="Torihiki">
+          <ScalarProperty Name="cd_torihiki" ColumnName="cd_torihiki" />
+          <ScalarProperty Name="nm_torihiki" ColumnName="nm_torihiki" />
+          <ScalarProperty Name="nm_torihiki_en" ColumnName="nm_torihiki_en" />
+          <ScalarProperty Name="kbn_konyu" ColumnName="kbn_konyu" />
+          <ScalarProperty Name="nm_jusho" ColumnName="nm_jusho" />
+          <ScalarProperty Name="no_yubin" ColumnName="no_yubin" />
+          <ScalarProperty Name="no_tel" ColumnName="no_tel" />
+          <ScalarProperty Name="dt_create" ColumnName="dt_create" />
+          <ScalarProperty Name="cd_create" ColumnName="cd_create" />
+          <ScalarProperty Name="dt_update" ColumnName="dt_update" />
+          <ScalarProperty Name="cd_update" ColumnName="cd_update" />
+          <ScalarProperty Name="ts" ColumnName="ts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tr_torihiki_buhin">
+      <EntityTypeMapping TypeName="SampleModel.tr_torihiki_buhin">
+        <MappingFragment StoreEntitySet="tr_torihiki_buhin">
+          <ScalarProperty Name="dt_nohin" ColumnName="dt_nohin" />
+          <ScalarProperty Name="cd_torihiki" ColumnName="cd_torihiki" />
+          <ScalarProperty Name="cd_buhin" ColumnName="cd_buhin" />
+          <ScalarProperty Name="nm_buhin" ColumnName="nm_buhin" />
+          <ScalarProperty Name="su_yotei" ColumnName="su_yotei" />
+          <ScalarProperty Name="su_jisseki" ColumnName="su_jisseki" />
+          <ScalarProperty Name="su_hiritsu_yotei" ColumnName="su_hiritsu_yotei" />
+          <ScalarProperty Name="su_hiritsu_jisseki" ColumnName="su_hiritsu_jisseki" />
+          <ScalarProperty Name="dt_create" ColumnName="dt_create" />
+          <ScalarProperty Name="cd_create" ColumnName="cd_create" />
+          <ScalarProperty Name="dt_update" ColumnName="dt_update" />
+          <ScalarProperty Name="cd_update" ColumnName="cd_update" />
+          <ScalarProperty Name="ts" ColumnName="ts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_SelectMitsumori" FunctionName="SampleModel.Store.sp_SelectMitsumori">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SampleModel.sp_SelectMitsumori_Result">
+          <ScalarProperty Name="no_mitsumori" ColumnName="no_mitsumori" />
+          <ScalarProperty Name="cd_torihiki" ColumnName="cd_torihiki" />
+          <ScalarProperty Name="cd_shiharai" ColumnName="cd_shiharai" />
+          <ScalarProperty Name="nm_hinmei" ColumnName="nm_hinmei" />
+          <ScalarProperty Name="biko" ColumnName="biko" />
+          <ScalarProperty Name="flg_del" ColumnName="flg_del" />
+          <ScalarProperty Name="dt_create" ColumnName="dt_create" />
+          <ScalarProperty Name="cd_create" ColumnName="cd_create" />
+          <ScalarProperty Name="dt_update" ColumnName="dt_update" />
+          <ScalarProperty Name="cd_update" ColumnName="cd_update" />
+          <ScalarProperty Name="ts" ColumnName="ts" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="ShiharaiJoken">
+      <EntityTypeMapping TypeName="SampleModel.ShiharaiJoken">
+        <MappingFragment StoreEntitySet="ShiharaiJoken">
+          <ScalarProperty Name="ts" ColumnName="ts" />
+          <ScalarProperty Name="cd_update" ColumnName="cd_update" />
+          <ScalarProperty Name="dt_update" ColumnName="dt_update" />
+          <ScalarProperty Name="cd_create" ColumnName="cd_create" />
+          <ScalarProperty Name="dt_create" ColumnName="dt_create" />
+          <ScalarProperty Name="nm_joken_shiharai" ColumnName="nm_joken_shiharai" />
+          <ScalarProperty Name="cd_shiharai" ColumnName="cd_shiharai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MitsumoriDirect">
+      <EntityTypeMapping TypeName="SampleModel.MitsumoriDirect">
+        <MappingFragment StoreEntitySet="MitsumoriDirect">
+          <ScalarProperty Name="ts" ColumnName="ts" />
+          <ScalarProperty Name="cd_update" ColumnName="cd_update" />
+          <ScalarProperty Name="dt_update" ColumnName="dt_update" />
+          <ScalarProperty Name="cd_create" ColumnName="cd_create" />
+          <ScalarProperty Name="dt_create" ColumnName="dt_create" />
+          <ScalarProperty Name="flg_del" ColumnName="flg_del" />
+          <ScalarProperty Name="biko" ColumnName="biko" />
+          <ScalarProperty Name="nm_hinmei" ColumnName="nm_hinmei" />
+          <ScalarProperty Name="cd_shiharai" ColumnName="cd_shiharai" />
+          <ScalarProperty Name="cd_torihiki" ColumnName="cd_torihiki" />
+          <ScalarProperty Name="no_mitsumori" ColumnName="no_mitsumori" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

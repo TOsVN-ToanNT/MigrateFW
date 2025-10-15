@@ -1,0 +1,68 @@
+ /*last update : 2016-10-17 */
+.part
+{
+    border: solid 1px #cccccc;
+    margin-bottom:2px;
+    margin-right: 2px;
+	position:relative;
+}
+
+.part h1.part-title
+{
+    margin: 0px;
+    padding: 4px 8px 4px 8px;
+    font-weight: normal;
+    font-size: 14px;
+	word-wrap: normal;
+	word-break: keep-all;
+	height: 30px;
+}
+
+.part div.part-content
+{
+    margin: 0px;
+    padding: 4px;
+    overflow: auto;
+    background-color: #FFFFFF;
+}
+
+.part h1.part-title i
+{
+    float: left;
+    margin-right: 8px;
+    margin-top: 2px;
+}
+
+.part h1.part-title span
+{
+    display: inline-block;
+    margin-top: 3px;
+}
+
+.part h1.part-title:hover
+{
+    /* background-color: #fafafa;*/
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.part h1 .hidden-icon
+{
+    display: none;
+}
+
+.part .part-command
+{
+	position: absolute;
+	top: 0px;
+	right: 2px;
+    padding: 0px;
+}
+
+
+.part .part-command button
+{
+    padding: 4px;
+    min-width: 80px;
+    margin-right: 8px;
+}

@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AuthorityMasterModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="AuthorityMasterModelStoreContainer">
+    <EntitySet Name="ma_shain_form" EntityType="AuthorityMasterModel.Store.ma_shain_form" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="vw_shain_info" EntityType="AuthorityMasterModel.Store.vw_shain_info" store:Type="Views" store:Schema="dbo" store:Name="vw_shain_info">
+      <DefiningQuery>SELECT 
+      [vw_shain_info].[cd_shain] AS [cd_shain], 
+      [vw_shain_info].[nm_shain] AS [nm_shain], 
+      [vw_shain_info].[cd_shozoku] AS [cd_shozoku], 
+      [vw_shain_info].[cd_shozoku_oi] AS [cd_shozoku_oi], 
+      [vw_shain_info].[nm_shozoku] AS [nm_shozoku], 
+      [vw_shain_info].[cd_kaisha] AS [cd_kaisha], 
+      [vw_shain_info].[nm_kaisha] AS [nm_kaisha], 
+      [vw_shain_info].[cd_system] AS [cd_system], 
+      [vw_shain_info].[type_kengen] AS [type_kengen], 
+      [vw_shain_info].[cd_kengen] AS [cd_kengen]
+      FROM [dbo].[vw_shain_info] AS [vw_shain_info]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_shain_info_form" EntityType="AuthorityMasterModel.Store.vw_shain_info_form" store:Type="Views" store:Schema="dbo" store:Name="vw_shain_info_form">
+      <DefiningQuery>SELECT 
+      [vw_shain_info_form].[cd_shain] AS [cd_shain], 
+      [vw_shain_info_form].[nm_shain] AS [nm_shain], 
+      [vw_shain_info_form].[cd_shozoku] AS [cd_shozoku], 
+      [vw_shain_info_form].[cd_shozoku_oi] AS [cd_shozoku_oi], 
+      [vw_shain_info_form].[cd_shozoku_union] AS [cd_shozoku_union], 
+      [vw_shain_info_form].[nm_shozoku] AS [nm_shozoku], 
+      [vw_shain_info_form].[cd_kaisha] AS [cd_kaisha], 
+      [vw_shain_info_form].[nm_kaisha] AS [nm_kaisha], 
+      [vw_shain_info_form].[cd_system] AS [cd_system], 
+      [vw_shain_info_form].[type_kengen] AS [type_kengen], 
+      [vw_shain_info_form].[cd_kengen] AS [cd_kengen], 
+      [vw_shain_info_form].[kbn_form] AS [kbn_form], 
+      [vw_shain_info_form].[cd_create] AS [cd_create], 
+      [vw_shain_info_form].[dt_create] AS [dt_create], 
+      [vw_shain_info_form].[cd_update] AS [cd_update], 
+      [vw_shain_info_form].[dt_update] AS [dt_update], 
+      [vw_shain_info_form].[ts] AS [ts]
+      FROM [dbo].[vw_shain_info_form] AS [vw_shain_info_form]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+  <EntityType Name="ma_shain_form">
+    <Key>
+      <PropertyRef Name="cd_shain" />
+    </Key>
+    <Property Name="cd_shain" Type="decimal" Nullable="false" Precision="10" />
+    <Property Name="nm_shain" Type="varchar" MaxLength="50" />
+    <Property Name="cd_shozoku" Type="numeric" Precision="10" />
+    <Property Name="cd_shozoku_oi" Type="numeric" Precision="2" />
+    <Property Name="cd_create" Type="char" MaxLength="10" />
+    <Property Name="dt_create" Type="datetimeoffset" />
+    <Property Name="cd_update" Type="char" MaxLength="10" />
+    <Property Name="dt_update" Type="datetimeoffset" />
+    <Property Name="ts" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <!--生成中に見つかったエラー:
+      警告 6002: テーブル/ビュー 'TosAuthenticationSample.dbo.vw_shain_info' には主キーが定義されていません。主キーは推論され、定義は読み取り専用のテーブル/ビューとして作成されました。
+      -->
+  <EntityType Name="vw_shain_info">
+    <Key>
+      <PropertyRef Name="cd_shain" />
+      <PropertyRef Name="nm_shain" />
+      <PropertyRef Name="cd_shozoku" />
+      <PropertyRef Name="cd_shozoku_oi" />
+      <PropertyRef Name="cd_system" />
+      <PropertyRef Name="type_kengen" />
+      <PropertyRef Name="cd_kengen" />
+    </Key>
+    <Property Name="cd_shain" Type="decimal" Nullable="false" Precision="10" />
+    <Property Name="nm_shain" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="cd_shozoku" Type="numeric" Nullable="false" Precision="10" />
+    <Property Name="cd_shozoku_oi" Type="numeric" Nullable="false" Precision="2" />
+    <Property Name="nm_shozoku" Type="varchar" MaxLength="50" />
+    <Property Name="cd_kaisha" Type="decimal" Precision="4" />
+    <Property Name="nm_kaisha" Type="varchar" MaxLength="20" />
+    <Property Name="cd_system" Type="int" Nullable="false" />
+    <Property Name="type_kengen" Type="int" Nullable="false" />
+    <Property Name="cd_kengen" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成中に見つかったエラー:
+      警告 6002: テーブル/ビュー 'TosAuthenticationSample.dbo.vw_shain_info_form' には主キーが定義されていません。主キーは推論され、定義は読み取り専用のテーブル/ビューとして作成されました。
+      -->
+  <EntityType Name="vw_shain_info_form">
+    <Key>
+      <PropertyRef Name="cd_shain" />
+      <PropertyRef Name="cd_system" />
+      <PropertyRef Name="type_kengen" />
+      <PropertyRef Name="cd_kengen" />
+      <PropertyRef Name="kbn_form" />
+    </Key>
+    <Property Name="cd_shain" Type="decimal" Nullable="false" Precision="10" />
+    <Property Name="nm_shain" Type="varchar" MaxLength="50" />
+    <Property Name="cd_shozoku" Type="numeric" Precision="10" />
+    <Property Name="cd_shozoku_oi" Type="numeric" Precision="2" />
+    <Property Name="cd_shozoku_union" Type="varchar" MaxLength="13" />
+    <Property Name="nm_shozoku" Type="varchar" MaxLength="50" />
+    <Property Name="cd_kaisha" Type="decimal" Precision="4" />
+    <Property Name="nm_kaisha" Type="varchar" MaxLength="20" />
+    <Property Name="cd_system" Type="int" Nullable="false" />
+    <Property Name="type_kengen" Type="int" Nullable="false" />
+    <Property Name="cd_kengen" Type="int" Nullable="false" />
+    <Property Name="kbn_form" Type="int" Nullable="false" />
+    <Property Name="cd_create" Type="char" MaxLength="10" />
+    <Property Name="dt_create" Type="datetimeoffset" />
+    <Property Name="cd_update" Type="char" MaxLength="10" />
+    <Property Name="dt_update" Type="datetimeoffset" />
+    <Property Name="ts" Type="timestamp" StoreGeneratedPattern="Computed" />
+  </EntityType>
+</Schema>

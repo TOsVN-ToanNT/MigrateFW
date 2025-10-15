@@ -1,0 +1,1236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{25401345-1215-4D9F-84D2-DD81462F7CAA}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tos.Web</RootNamespace>
+    <AssemblyName>Tos.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;UNDER_DEVELOPMENT</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.87.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.87.1\lib\net40\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="jp.co.fit.vfreport.SvfrClient, Version=8.1.0.0, Culture=neutral, PublicKeyToken=9bf31437c001b341, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\jp.co.fit.vfreport.SvfrClient.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.5.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.OData.5.5.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services">
+      <HintPath>..\packages\Microsoft.Data.Services.5.5.0\lib\net40\Microsoft.Data.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client">
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.5.0\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=2.0.1.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NLog.2.0.1.2\lib\net40\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Spatial, Version=5.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Spatial.5.5.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.OData">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.4.0.30506\lib\net40\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\LoginNotAD.aspx" />
+    <Content Include="Content\select2.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="Pages\CreateFormUser.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\PasswordChange.aspx" />
+    <Content Include="Account\WinLogin.aspx" />
+    <Content Include="AuthorizedError.aspx" />
+    <Content Include="Content\app.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap\bootstrap.css">
+      <DependentUpon>bootstrap.less</DependentUpon>
+    </Content>
+    <Content Include="Content\bootstrap\bootstrap.min.css">
+      <DependentUpon>bootstrap.less</DependentUpon>
+    </Content>
+    <Content Include="Content\bootstrap\variables.css">
+      <DependentUpon>variables.less</DependentUpon>
+    </Content>
+    <Content Include="Content\bootstrap\variables.min.css">
+      <DependentUpon>variables.less</DependentUpon>
+    </Content>
+    <Content Include="Content\constants.css">
+      <DependentUpon>constants.less</DependentUpon>
+    </Content>
+    <Content Include="Content\constants.min.css">
+      <DependentUpon>constants.less</DependentUpon>
+    </Content>
+    <Content Include="Content\headerdetail.css">
+      <DependentUpon>headerdetail.less</DependentUpon>
+    </Content>
+    <Content Include="Content\headerdetail.min.css">
+      <DependentUpon>headerdetail.less</DependentUpon>
+    </Content>
+    <Content Include="Content\icons.css" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\images\icons-triangle.png" />
+    <Content Include="Content\images\loading.gif" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\tos_logo.png" />
+    <Content Include="Content\menu.css">
+      <DependentUpon>menu.less</DependentUpon>
+    </Content>
+    <Content Include="Content\menu.min.css">
+      <DependentUpon>menu.less</DependentUpon>
+    </Content>
+    <Content Include="Content\part.css" />
+    <Content Include="Content\reset.css">
+      <DependentUpon>reset.less</DependentUpon>
+    </Content>
+    <Content Include="Content\reset.min.css">
+      <DependentUpon>reset.less</DependentUpon>
+    </Content>
+    <Content Include="Content\site.css">
+      <DependentUpon>site.less</DependentUpon>
+    </Content>
+    <Content Include="Content\site.min.css">
+      <DependentUpon>site.less</DependentUpon>
+    </Content>
+    <Content Include="Default.aspx" />
+    <Content Include="Error.aspx" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="jp.co.fit.vfreport.SvfrClient.dll" />
+    <Content Include="Pages\Chart.aspx" />
+    <Content Include="Pages\CsvUploadDownload.aspx" />
+    <Content Include="Pages\Default.aspx" />
+    <Content Include="Account\Redirect401.html" />
+    <Content Include="Pages\Dialogs\AjaxUploadDialog.aspx" />
+    <Content Include="Pages\Dialogs\BuhinDialog.aspx" />
+    <Content Include="Pages\Dialogs\ConfirmDialog.aspx" />
+    <Content Include="Pages\Dialogs\SearchDialog.aspx" />
+    <Content Include="Pages\Dialogs\SearchInputDialog.aspx" />
+    <Content Include="Pages\Dialogs\SearchMultiSelectDialog.aspx" />
+    <Content Include="Pages\Dialogs\UploadDialog.aspx" />
+    <Content Include="Pages\HeaderDetailMultiRow.aspx" />
+    <Content Include="Pages\HeaderDetailScrollable.aspx" />
+    <Content Include="Pages\OptionSample.aspx" />
+    <Content Include="Pages\PDFSVFReports.aspx" />
+    <Content Include="Pages\PortalMenu.aspx" />
+    <Content Include="Pages\SearchInputCalendarColumn.aspx" />
+    <Content Include="Pages\SearchInputDetail.aspx" />
+    <Content Include="Pages\SearchInputFlexMultiColumn.aspx" />
+    <Content Include="Pages\SearchInputTable.aspx" />
+    <Content Include="Pages\SearchList.aspx" />
+    <Content Include="Pages\SearchListMultiRow.aspx" />
+    <Content Include="Pages\SearchListSubtotal.aspx" />
+    <Content Include="Pages\Transfer.aspx" />
+    <Content Include="Pages\TreeMenu.aspx" />
+    <Content Include="Resources\message.app.ja.js" />
+    <Content Include="Resources\account\pagedata-login.en.js" />
+    <Content Include="Resources\account\pagedata-login.ja.js" />
+    <Content Include="Resources\account\pagedata-passwordchange.en.js" />
+    <Content Include="Resources\account\pagedata-passwordchange.ja.js" />
+    <Content Include="Resources\menu.en.js" />
+    <Content Include="Resources\menu.ja.js" />
+    <Content Include="Resources\message.en.js" />
+    <Content Include="Resources\message.ja.js" />
+    <Content Include="Resources\pagedata-all.en.js" />
+    <Content Include="Resources\pagedata-all.ja.js" />
+    <Content Include="Resources\pagedata-dialog.en.js" />
+    <Content Include="Resources\pagedata-dialog.ja.js" />
+    <Content Include="Resources\portalmenu.ja.js" />
+    <Content Include="Resources\select2-messages\af.js" />
+    <Content Include="Resources\select2-messages\ar.js" />
+    <Content Include="Resources\select2-messages\az.js" />
+    <Content Include="Resources\select2-messages\bg.js" />
+    <Content Include="Resources\select2-messages\bs.js" />
+    <Content Include="Resources\select2-messages\ca.js" />
+    <Content Include="Resources\select2-messages\cs.js" />
+    <Content Include="Resources\select2-messages\da.js" />
+    <Content Include="Resources\select2-messages\de.js" />
+    <Content Include="Resources\select2-messages\dsb.js" />
+    <Content Include="Resources\select2-messages\el.js" />
+    <Content Include="Resources\select2-messages\en.js" />
+    <Content Include="Resources\select2-messages\es.js" />
+    <Content Include="Resources\select2-messages\et.js" />
+    <Content Include="Resources\select2-messages\eu.js" />
+    <Content Include="Resources\select2-messages\fa.js" />
+    <Content Include="Resources\select2-messages\fi.js" />
+    <Content Include="Resources\select2-messages\fr.js" />
+    <Content Include="Resources\select2-messages\gl.js" />
+    <Content Include="Resources\select2-messages\he.js" />
+    <Content Include="Resources\select2-messages\hi.js" />
+    <Content Include="Resources\select2-messages\hr.js" />
+    <Content Include="Resources\select2-messages\hsb.js" />
+    <Content Include="Resources\select2-messages\hu.js" />
+    <Content Include="Resources\select2-messages\hy.js" />
+    <Content Include="Resources\select2-messages\id.js" />
+    <Content Include="Resources\select2-messages\is.js" />
+    <Content Include="Resources\select2-messages\it.js" />
+    <Content Include="Resources\select2-messages\ja.js" />
+    <Content Include="Resources\select2-messages\km.js" />
+    <Content Include="Resources\select2-messages\ko.js" />
+    <Content Include="Resources\select2-messages\lt.js" />
+    <Content Include="Resources\select2-messages\lv.js" />
+    <Content Include="Resources\select2-messages\mk.js" />
+    <Content Include="Resources\select2-messages\ms.js" />
+    <Content Include="Resources\select2-messages\nb.js" />
+    <Content Include="Resources\select2-messages\nl.js" />
+    <Content Include="Resources\select2-messages\pl.js" />
+    <Content Include="Resources\select2-messages\ps.js" />
+    <Content Include="Resources\select2-messages\pt-BR.js" />
+    <Content Include="Resources\select2-messages\pt.js" />
+    <Content Include="Resources\select2-messages\ro.js" />
+    <Content Include="Resources\select2-messages\ru.js" />
+    <Content Include="Resources\select2-messages\sk.js" />
+    <Content Include="Resources\select2-messages\sl.js" />
+    <Content Include="Resources\select2-messages\sr-Cyrl.js" />
+    <Content Include="Resources\select2-messages\sr.js" />
+    <Content Include="Resources\select2-messages\sv.js" />
+    <Content Include="Resources\select2-messages\th.js" />
+    <Content Include="Resources\select2-messages\tk.js" />
+    <Content Include="Resources\select2-messages\tr.js" />
+    <Content Include="Resources\select2-messages\uk.js" />
+    <Content Include="Resources\select2-messages\vi.js" />
+    <Content Include="Resources\select2-messages\zh-CN.js" />
+    <Content Include="Resources\select2-messages\zh-TW.js" />
+    <Content Include="Resources\settings.app.en.js" />
+    <Content Include="Resources\settings.en.js" />
+    <Content Include="Resources\settings.ja.js" />
+    <Content Include="Resources\pages\test\pagedata-test.en.js" />
+    <Content Include="Resources\pages\test\pagedata-test.ja.js" />
+    <Content Include="Resources\settings.app.ja.js" />
+    <Content Include="Scripts\app.ajax.file.js" />
+    <Content Include="Scripts\app.ajax.file.min.js">
+      <DependentUpon>app.ajax.file.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app.ajax.js" />
+    <Content Include="Scripts\app.base.js" />
+    <Content Include="Scripts\app.extend.js" />
+    <Content Include="Scripts\app.file.js" />
+    <Content Include="Scripts\app.file.min.js">
+      <DependentUpon>app.file.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app.js">
+      <DependentUpon>app.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app.logger.js" />
+    <Content Include="Scripts\app.logger.min.js">
+      <DependentUpon>app.logger.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app.min.js">
+      <DependentUpon>app.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app.obj.js" />
+    <Content Include="Scripts\app.ui.js" />
+    <Content Include="Scripts\app.validation.js" />
+    <Content Include="Scripts\bignumber.js" />
+    <Content Include="Scripts\bignumber.min.js">
+      <DependentUpon>bignumber.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\calendar.js" />
+    <Content Include="Scripts\calendar.min.js">
+      <DependentUpon>calendar.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\datatable.js" />
+    <Content Include="Scripts\datatable.min.js">
+      <DependentUpon>datatable.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\downloadfile.min.js">
+      <DependentUpon>downloadfile.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\encoding-indexes.js" />
+    <Content Include="Scripts\encoding-shiftjis.js">
+      <DependentUpon>encoding-shiftjis.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="Scripts\encoding-shiftjis.min.js">
+      <DependentUpon>encoding-shiftjis.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="Scripts\encoding.js" />
+    <Content Include="Scripts\entertotab.js" />
+    <Content Include="Scripts\entertotab.min.js">
+      <DependentUpon>entertotab.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\excanvas.js" />
+    <Content Include="Scripts\excanvas.min.js" />
+    <Content Include="Scripts\filedad.js" />
+    <Content Include="Scripts\filedad.min.js">
+      <DependentUpon>filedad.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\flexmulticolumns.js" />
+    <Content Include="Scripts\flexmulticolumns.min.js">
+      <DependentUpon>flexmulticolumns.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\html5shiv.js" />
+    <Content Include="Scripts\app.ajax.file.min.js.map">
+      <DependentUpon>app.ajax.file.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app.file.min.js.map">
+      <DependentUpon>app.file.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\app.logger.min.js.map">
+      <DependentUpon>app.logger.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\filedad.min.js.map">
+      <DependentUpon>filedad.js</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\jquery-migrate-3.0.0.js" />
+    <Content Include="Scripts\jquery-migrate-3.0.0.min.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
+    <Content Include="Scripts\jquery.extablefocus.js" />
+    <Content Include="Scripts\jquery.extablefocus.min.js">
+      <DependentUpon>jquery.extablefocus.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery.flot.categories.js" />
+    <Content Include="Scripts\jquery.flot.categories.min.js" />
+    <Content Include="Scripts\jquery.flot.dashes.js" />
+    <Content Include="Scripts\jquery.flot.dashes.min.js" />
+    <Content Include="Scripts\jquery.flot.js" />
+    <Content Include="Scripts\jquery.flot.min.js" />
+    <Content Include="Scripts\jquery.flot.orderBars.js" />
+    <Content Include="Scripts\jquery.flot.orderBars.min.js" />
+    <Content Include="Scripts\jquery.flot.resize.js" />
+    <Content Include="Scripts\jquery.flot.resize.min.js" />
+    <Content Include="Scripts\jquery.flot.stack.js" />
+    <Content Include="Scripts\jquery.flot.stack.min.js" />
+    <Content Include="Scripts\jquery.flot.time.js" />
+    <Content Include="Scripts\jquery.flot.time.min.js" />
+    <Content Include="Scripts\jquery.flot.valuelabels.js" />
+    <Content Include="Scripts\jquery.flot.valuelabels.min.js" />
+    <Content Include="Scripts\jquery.ui.datepicker-ja.js" />
+    <Content Include="Scripts\jquery.ui.monthpicker-ja.js" />
+    <Content Include="Scripts\jquery.ui.monthpicker.js" />
+    <Content Include="Scripts\jquery.ui.monthpicker.min.js">
+      <DependentUpon>jquery.ui.monthpicker.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\json2.js" />
+    <Content Include="Scripts\json2.min.js" />
+    <Content Include="Scripts\part.js" />
+    <Content Include="Scripts\part.min.js">
+      <DependentUpon>part.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\select2.js" />
+    <Content Include="Scripts\select2.min.js">
+      <DependentUpon>select2.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\subtotal.js" />
+    <Content Include="Scripts\subtotal.min.js">
+      <DependentUpon>subtotal.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\tabcomm.js" />
+    <Content Include="Scripts\tabcomm.min.js">
+      <DependentUpon>tabcomm.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\uploadfile.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\app.validation.method.js" />
+    <Content Include="Scripts\downloadfile.js" />
+    <Content Include="Scripts\uploadfile.min.js">
+      <DependentUpon>uploadfile.js</DependentUpon>
+    </Content>
+    <Content Include="Services\SampleService.svc" />
+    <Content Include="Services\TosAuthenticationSampleService.svc" />
+    <Content Include="Templates\Pages\CsvUploadDownload.aspx" />
+    <Content Include="Templates\Pages\Dialogs\ConfirmDialog.aspx" />
+    <Content Include="Templates\Pages\HeaderDetail.aspx" />
+    <Content Include="Templates\Pages\MainMenu.aspx" />
+    <Content Include="Templates\Pages\SearchDialog.aspx" />
+    <Content Include="Templates\Pages\SearchInputDetail.aspx" />
+    <Content Include="Templates\Pages\SearchInputFlexMultiColumn.aspx" />
+    <Content Include="Templates\Pages\SearchList.aspx" />
+    <Content Include="Templates\Pages\SearchInputCalendarColumn.aspx" />
+    <Content Include="Templates\Pages\SearchInputTable.aspx" />
+    <Content Include="Templates\Pages\UploadDialog.aspx" />
+    <Content Include="Templates\Pages\SearchInputDialog.aspx" />
+    <Content Include="Templates\Services\TemplateDataService.svc" />
+    <Content Include="Temp\readme.txt" />
+    <Content Include="vsersion.txt" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\LoginNotAD.aspx.cs">
+      <DependentUpon>LoginNotAD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\LoginNotAD.aspx.designer.cs">
+      <DependentUpon>LoginNotAD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ClientLogController.cs" />
+    <Compile Include="Controllers\MitsumoriCSVAjaxController.cs" />
+    <Compile Include="Controllers\MitsumoriExcelAjaxController.cs" />
+    <Compile Include="Controllers\TorihikiController.cs" />
+    <Compile Include="Data\ma_shain_form.cs">
+      <DependentUpon>AuthorityMaster.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SampleModelPartial.cs" />
+    <Compile Include="Data\sp_SelectMitsumori_Result.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\vw_shain_info_form.cs">
+      <DependentUpon>AuthorityMaster.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CreateFormUser.aspx.cs">
+      <DependentUpon>CreateFormUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CreateFormUser.aspx.designer.cs">
+      <DependentUpon>CreateFormUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\MixedAuthentication.cs" />
+    <Compile Include="Account\PasswordChange.aspx.cs">
+      <DependentUpon>PasswordChange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\PasswordChange.aspx.designer.cs">
+      <DependentUpon>PasswordChange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\WinLogin.aspx.cs">
+      <DependentUpon>WinLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\WinLogin.aspx.designer.cs">
+      <DependentUpon>WinLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="AuthorizedError.aspx.cs">
+      <DependentUpon>AuthorizedError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AuthorizedError.aspx.designer.cs">
+      <DependentUpon>AuthorizedError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\CreateFormUserController.cs" />
+    <Compile Include="Controllers\SampleCsvUploadDownloadController.cs" />
+    <Compile Include="Controllers\Filters\AuthenticationFilterAttribute.cs" />
+    <Compile Include="Controllers\FlexColumnController.cs" />
+    <Compile Include="Controllers\Helpers\Constants.cs" />
+    <Compile Include="Controllers\Helpers\ExcelFile.cs" />
+    <Compile Include="Controllers\Helpers\ExcelFileAppExtend.cs" />
+    <Compile Include="Controllers\Helpers\FileUploadDownloadUtility.cs" />
+    <Compile Include="Controllers\Helpers\TextFieldFile.cs" />
+    <Compile Include="Controllers\Helpers\ValidationExtension.cs" />
+    <Compile Include="Controllers\Helpers\ValidationRule.cs" />
+    <Compile Include="Controllers\MitsumoriExcelController.cs" />
+    <Compile Include="Controllers\MitsumoriCSVController.cs" />
+    <Compile Include="Controllers\PasswordChangeController.cs" />
+    <Compile Include="Controllers\Filters\GenericExceptionFilterAttribute.cs" />
+    <Compile Include="Controllers\SampleBuhinCalendarController.cs" />
+    <Compile Include="Controllers\SampleFixedController.cs" />
+    <Compile Include="Controllers\SampleMitsumoriController.cs" />
+    <Compile Include="Controllers\SampleMitsumoriInputDetailController.cs" />
+    <Compile Include="Controllers\SampleNewsController.cs" />
+    <Compile Include="Controllers\SamplePDFSVFReportController.cs" />
+    <Compile Include="Controllers\SampleProductController.cs" />
+    <Compile Include="Controllers\SampleShinseiController.cs" />
+    <Compile Include="Controllers\TenpuController.cs" />
+    <Compile Include="Data\Buhin.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\BuhinCalendar.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\FixedKentosho.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\FixedMitsumori.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Kentosho.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ma_maker.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Mitsumori.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\MitsumoriDirect.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\News.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Product.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SampleModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SampleModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SampleModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ShiharaiJoken.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Shinsei.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Tenpu.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Torihiki.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tr_torihiki_buhin.cs">
+      <DependentUpon>SampleModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\vw_shain_info.cs">
+      <DependentUpon>AuthorityMaster.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\Filters\LoggingExceptionFilterAttribute.cs" />
+    <Compile Include="Controllers\Filters\RolesAuthorizationFilterAttribute.cs" />
+    <Compile Include="Data\AuthorityMaster.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AuthorityMaster.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\AuthorityMaster.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AuthorityMaster.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\AuthorityMaster.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AuthorityMaster.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DataCopier.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Data\ChangeSet.cs" />
+    <Compile Include="Data\InvalidationSet.cs" />
+    <Compile Include="Data\SqlErrorNumbers.cs" />
+    <Compile Include="Data\StoredProcedureResult.cs" />
+    <Compile Include="Data\AuthorityMasterEntities.cs" />
+    <Compile Include="Data\UserInfo.cs" />
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Logging\Logger.cs" />
+    <Compile Include="Pages\Chart.aspx.cs">
+      <DependentUpon>Chart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Chart.aspx.designer.cs">
+      <DependentUpon>Chart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CsvUploadDownload.aspx.cs">
+      <DependentUpon>CsvUploadDownload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CsvUploadDownload.aspx.designer.cs">
+      <DependentUpon>CsvUploadDownload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\AjaxUploadDialog.aspx.cs">
+      <DependentUpon>AjaxUploadDialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\AjaxUploadDialog.aspx.designer.cs">
+      <DependentUpon>AjaxUploadDialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\BuhinDialog.aspx.cs">
+      <DependentUpon>BuhinDialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\BuhinDialog.aspx.designer.cs">
+      <DependentUpon>BuhinDialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\ConfirmDialog.aspx.cs">
+      <DependentUpon>ConfirmDialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\ConfirmDialog.aspx.designer.cs">
+      <DependentUpon>ConfirmDialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\SearchDialog.aspx.cs">
+      <DependentUpon>SearchDialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\SearchDialog.aspx.designer.cs">
+      <DependentUpon>SearchDialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\SearchInputDialog.aspx.cs">
+      <DependentUpon>SearchInputDialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\SearchInputDialog.aspx.designer.cs">
+      <DependentUpon>SearchInputDialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\SearchMultiSelectDialog.aspx.cs">
+      <DependentUpon>SearchMultiSelectDialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\SearchMultiSelectDialog.aspx.designer.cs">
+      <DependentUpon>SearchMultiSelectDialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dialogs\UploadDialog.aspx.cs">
+      <DependentUpon>UploadDialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dialogs\UploadDialog.aspx.designer.cs">
+      <DependentUpon>UploadDialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\HeaderDetailMultiRow.aspx.cs">
+      <DependentUpon>HeaderDetailMultiRow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\HeaderDetailMultiRow.aspx.designer.cs">
+      <DependentUpon>HeaderDetailMultiRow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\HeaderDetailScrollable.aspx.cs">
+      <DependentUpon>HeaderDetailScrollable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\HeaderDetailScrollable.aspx.designer.cs">
+      <DependentUpon>HeaderDetailScrollable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OptionSample.aspx.cs">
+      <DependentUpon>OptionSample.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\OptionSample.aspx.designer.cs">
+      <DependentUpon>OptionSample.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PDFSVFReports.aspx.cs">
+      <DependentUpon>PDFSVFReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PDFSVFReports.aspx.designer.cs">
+      <DependentUpon>PDFSVFReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PortalMenu.aspx.cs">
+      <DependentUpon>PortalMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PortalMenu.aspx.designer.cs">
+      <DependentUpon>PortalMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SearchInputCalendarColumn.aspx.cs">
+      <DependentUpon>SearchInputCalendarColumn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SearchInputCalendarColumn.aspx.designer.cs">
+      <DependentUpon>SearchInputCalendarColumn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SearchInputDetail.aspx.cs">
+      <DependentUpon>SearchInputDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SearchInputDetail.aspx.designer.cs">
+      <DependentUpon>SearchInputDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SearchInputFlexMultiColumn.aspx.cs">
+      <DependentUpon>SearchInputFlexMultiColumn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SearchInputFlexMultiColumn.aspx.designer.cs">
+      <DependentUpon>SearchInputFlexMultiColumn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SearchInputTable.aspx.cs">
+      <DependentUpon>SearchInputTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SearchInputTable.aspx.designer.cs">
+      <DependentUpon>SearchInputTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SearchList.aspx.cs">
+      <DependentUpon>SearchList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SearchList.aspx.designer.cs">
+      <DependentUpon>SearchList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SearchListMultiRow.aspx.cs">
+      <DependentUpon>SearchListMultiRow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SearchListMultiRow.aspx.designer.cs">
+      <DependentUpon>SearchListMultiRow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SearchListSubtotal.aspx.cs">
+      <DependentUpon>SearchListSubtotal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SearchListSubtotal.aspx.designer.cs">
+      <DependentUpon>SearchListSubtotal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Transfer.aspx.cs">
+      <DependentUpon>Transfer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Transfer.aspx.designer.cs">
+      <DependentUpon>Transfer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TreeMenu.aspx.cs">
+      <DependentUpon>TreeMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\TreeMenu.aspx.designer.cs">
+      <DependentUpon>TreeMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resource.SVF.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.SVF.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SvfClient.cs" />
+    <Compile Include="Services\SampleService.svc.cs">
+      <DependentUpon>SampleService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Services\TosAuthenticationSampleService.svc.cs">
+      <DependentUpon>TosAuthenticationSampleService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Controllers\CsvUploadDownloadController.cs" />
+    <Compile Include="Templates\Controllers\HeaderDetailController.cs" />
+    <Compile Include="Templates\Controllers\SearchInputController.cs" />
+    <Compile Include="Templates\Pages\CsvUploadDownload.aspx.cs">
+      <DependentUpon>CsvUploadDownload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\Pages\CsvUploadDownload.aspx.designer.cs">
+      <DependentUpon>CsvUploadDownload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Pages\Dialogs\ConfirmDialog.aspx.cs">
+      <DependentUpon>ConfirmDialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\Pages\Dialogs\ConfirmDialog.aspx.designer.cs">
+      <DependentUpon>ConfirmDialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Pages\HeaderDetail.aspx.cs">
+      <DependentUpon>HeaderDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\Pages\HeaderDetail.aspx.designer.cs">
+      <DependentUpon>HeaderDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Pages\MainMenu.aspx.cs">
+      <DependentUpon>MainMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\Pages\MainMenu.aspx.designer.cs">
+      <DependentUpon>MainMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Pages\SearchDialog.aspx.cs">
+      <DependentUpon>SearchDialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\Pages\SearchDialog.aspx.designer.cs">
+      <DependentUpon>SearchDialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Pages\SearchInputDetail.aspx.cs">
+      <DependentUpon>SearchInputDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\Pages\SearchInputDetail.aspx.designer.cs">
+      <DependentUpon>SearchInputDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Pages\SearchInputFlexMultiColumn.aspx.cs">
+      <DependentUpon>SearchInputFlexMultiColumn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\Pages\SearchInputFlexMultiColumn.aspx.designer.cs">
+      <DependentUpon>SearchInputFlexMultiColumn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Pages\SearchList.aspx.cs">
+      <DependentUpon>SearchList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\Pages\SearchList.aspx.designer.cs">
+      <DependentUpon>SearchList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Pages\SearchInputCalendarColumn.aspx.cs">
+      <DependentUpon>SearchInputCalendarColumn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\Pages\SearchInputCalendarColumn.aspx.designer.cs">
+      <DependentUpon>SearchInputCalendarColumn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Pages\SearchInputTable.aspx.cs">
+      <DependentUpon>SearchInputTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\Pages\SearchInputTable.aspx.designer.cs">
+      <DependentUpon>SearchInputTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Pages\UploadDialog.aspx.cs">
+      <DependentUpon>UploadDialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\Pages\UploadDialog.aspx.designer.cs">
+      <DependentUpon>UploadDialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Pages\SearchInputDialog.aspx.cs">
+      <DependentUpon>SearchInputDialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\Pages\SearchInputDialog.aspx.designer.cs">
+      <DependentUpon>SearchInputDialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Services\TemplateDataService.svc.cs">
+      <DependentUpon>TemplateDataService.svc</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Manuals\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Account\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content\headerdetail.less" />
+    <Content Include="Content\bootstrap\alerts.less" />
+    <Content Include="Content\bootstrap\badges.less" />
+    <Content Include="Content\bootstrap\bootstrap.less" />
+    <Content Include="Content\bootstrap\breadcrumbs.less" />
+    <Content Include="Content\bootstrap\button-groups.less" />
+    <Content Include="Content\bootstrap\buttons.less" />
+    <Content Include="Content\bootstrap\carousel.less" />
+    <Content Include="Content\bootstrap\close.less" />
+    <Content Include="Content\bootstrap\code.less" />
+    <Content Include="Content\bootstrap\component-animations.less" />
+    <Content Include="Content\bootstrap\dropdowns.less" />
+    <Content Include="Content\bootstrap\forms.less" />
+    <Content Include="Content\bootstrap\glyphicons.less" />
+    <Content Include="Content\bootstrap\grid.less" />
+    <Content Include="Content\bootstrap\input-groups.less" />
+    <Content Include="Content\bootstrap\jumbotron.less" />
+    <Content Include="Content\bootstrap\labels.less" />
+    <Content Include="Content\bootstrap\list-group.less" />
+    <Content Include="Content\bootstrap\media.less" />
+    <Content Include="Content\bootstrap\mixins.less" />
+    <Content Include="Content\bootstrap\modals.less" />
+    <Content Include="Content\bootstrap\navbar.less" />
+    <Content Include="Content\bootstrap\navs.less" />
+    <Content Include="Content\bootstrap\normalize.less" />
+    <Content Include="Content\bootstrap\pager.less" />
+    <Content Include="Content\bootstrap\pagination.less" />
+    <Content Include="Content\bootstrap\panels.less" />
+    <Content Include="Content\bootstrap\popovers.less" />
+    <Content Include="Content\bootstrap\print.less" />
+    <Content Include="Content\bootstrap\progress-bars.less" />
+    <Content Include="Content\bootstrap\responsive-utilities.less" />
+    <Content Include="Content\bootstrap\scaffolding.less" />
+    <Content Include="Content\bootstrap\tables.less" />
+    <Content Include="Content\bootstrap\theme.less" />
+    <Content Include="Content\bootstrap\thumbnails.less" />
+    <Content Include="Content\bootstrap\tooltip.less" />
+    <Content Include="Content\bootstrap\type.less" />
+    <Content Include="Content\bootstrap\utilities.less" />
+    <Content Include="Content\bootstrap\variables.less" />
+    <Content Include="Content\bootstrap\wells.less" />
+    <None Include="Content\site.less" />
+    <EntityDeploy Include="Data\AuthorityMaster.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AuthorityMaster.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Data\AuthorityMaster.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AuthorityMaster.edmx</DependentUpon>
+      <LastGenOutput>AuthorityMaster.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data\AuthorityMaster.edmx.diagram">
+      <DependentUpon>AuthorityMaster.edmx</DependentUpon>
+    </Content>
+    <Content Include="Data\AuthorityMaster.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AuthorityMaster.edmx</DependentUpon>
+      <LastGenOutput>AuthorityMaster.cs</LastGenOutput>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <EntityDeploy Include="Data\SampleModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SampleModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Data\SampleModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data\SampleModel.edmx.diagram">
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Data\SampleModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleModel.edmx</DependentUpon>
+      <LastGenOutput>SampleModel.cs</LastGenOutput>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\PublishProfiles\サンプル環境.pubxml" />
+    <None Include="Properties\PublishProfiles\テスト環境発行.pubxml" />
+    <None Include="Properties\PublishProfiles\ファイルシステム書き出し.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Resources\message.app.en.js" />
+    <Content Include="ExcelTemplates\template.xlsx" />
+    <None Include="Scripts\app.js.bundle" />
+    <Content Include="Scripts\app.min.js.map">
+      <DependentUpon>app.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="Scripts\calendar.min.js.map">
+      <DependentUpon>calendar.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\datatable.min.js.map">
+      <DependentUpon>datatable.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\downloadfile.min.js.map">
+      <DependentUpon>downloadfile.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\entertotab.min.js.map">
+      <DependentUpon>entertotab.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\bignumber.min.js.map">
+      <DependentUpon>bignumber.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\flexmulticolumns.min.js.map">
+      <DependentUpon>flexmulticolumns.js</DependentUpon>
+    </Content>
+    <None Include="Scripts\encoding-shiftjis.js.bundle" />
+    <Content Include="Scripts\encoding-shiftjis.min.js.map">
+      <DependentUpon>encoding-shiftjis.js.bundle</DependentUpon>
+    </Content>
+    <None Include="Content\constants.less" />
+    <None Include="Content\menu.less" />
+    <None Include="Content\reset.less" />
+    <Content Include="svfrclient.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\part.min.js.map">
+      <DependentUpon>part.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\subtotal.min.js.map">
+      <DependentUpon>subtotal.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\uploadfile.min.js.map">
+      <DependentUpon>uploadfile.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery.extablefocus.min.js.map">
+      <DependentUpon>jquery.extablefocus.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\tabcomm.min.js.map">
+      <DependentUpon>tabcomm.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery.ui.monthpicker.min.js.map">
+      <DependentUpon>jquery.ui.monthpicker.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Scripts\select2.min.js.map">
+      <DependentUpon>select2.js</DependentUpon>
+    </Content>
+    <None Include="Web.Test.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.en.resx" />
+    <EmbeddedResource Include="Properties\Resource.SVF.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.SVF.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;UNDER_DEVELOPMENT</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52407</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Target Name="DeployFiles" AfterTargets="AfterBuild" Condition="'$(DeployFiles)'=='true'">
+    <TransformXml Source="$(WebProjectOutputDir)\Web.config" Transform="C:\Builds\5\TouSolusions\TOS.Web To CustomerWeb Server\Sources\TOS.web\web.$(ConfigurationName).config" Destination="$(WebProjectOutputDir)\Web.config" />
+    <Message Text="AfterBuild run start xcopy to CustomerWeb Server" Importance="high" />
+    <Exec Command="xcopy.exe /Y /S &quot;C:\Builds\5\TouSolusions\TOS.Web To CustomerWeb Server\Binaries\_PublishedWebsites\Tos.web&quot; &quot;\\customerweb\TosBase&quot;" />
+    <Message Text="AfterBuild run end" Importance="high" />
+  </Target>
+  <PropertyGroup>
+    <PostBuildEvent>COPY /Y $(ProjectDir)\Content\bootstrap\bootstrap.css $(ProjectDir)\Content\bootstrap.css
+COPY /Y $(ProjectDir)\Content\bootstrap\bootstrap.min.css $(ProjectDir)\Content\bootstrap.min.css</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+</Project>

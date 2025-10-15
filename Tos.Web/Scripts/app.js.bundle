@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bundle minify="true" runOnBuild="true" output="app.js">
+  <!--The order of the <file> elements determines the order of them when bundled.-->
+  <file>/Scripts/app.base.js</file>
+  <file>/Scripts/app.obj.js</file>
+  <file>/Scripts/app.ui.js</file>
+  <file>/Scripts/app.ajax.js</file>
+  <file>/Scripts/app.validation.js</file>
+  <file>/Scripts/app.validation.method.js</file>
+</bundle>

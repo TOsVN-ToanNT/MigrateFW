@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdjustmentErrorMessage" xml:space="preserve">
+    <value>調整値の書き込みに失敗しました。</value>
+  </data>
+  <data name="AttributeChangeErrorMessage" xml:space="preserve">
+    <value>変更内容に誤りがあります（属性変更）。</value>
+  </data>
+  <data name="AttributeFieldExistsErrorMessage" xml:space="preserve">
+    <value>該当するフィールド名がありません（属性変更） 。指定した属性変更は無視されます。</value>
+  </data>
+  <data name="AttributeInvalidErrorMessage" xml:space="preserve">
+    <value>該当する項目名がありません（属性変更）。</value>
+  </data>
+  <data name="DBConnectionErrorMessage" xml:space="preserve">
+    <value>DB 接続エラーです。</value>
+  </data>
+  <data name="FieldCountErrorMessage" xml:space="preserve">
+    <value>フィールド数が不足しています。出力されたデータは無視されます。</value>
+  </data>
+  <data name="FieldNameErrorMessage" xml:space="preserve">
+    <value>不正フィールド名が指定されています。出力されたデータは無視されます。</value>
+  </data>
+  <data name="FormModeCountErrorMessage" xml:space="preserve">
+    <value>単体項目に対して項目番号を指定した、または配列項目に対する項目番号が不正です。</value>
+  </data>
+  <data name="FormModeFieldErrorMessage" xml:space="preserve">
+    <value>フィールド名が存在しません。</value>
+  </data>
+  <data name="GraphicErrorMessage" xml:space="preserve">
+    <value>グラフィックモードに対応していない制御コードを使用しているにも関わらず、グラフィックモードでのみ有効なオブジェクトが設計されている様式ファイルを使用しています。</value>
+  </data>
+  <data name="ImageFileErrorMessage" xml:space="preserve">
+    <value>イメージファイルのオープンエラーです。</value>
+  </data>
+  <data name="IndexErrorMessage" xml:space="preserve">
+    <value>ソートインデックスの作成エラーです。</value>
+  </data>
+  <data name="InvalidErrorMessage" xml:space="preserve">
+    <value>メソッドの引数に誤りがあります。</value>
+  </data>
+  <data name="JavaVMErrorMessage" xml:space="preserve">
+    <value>JavaVM内に不正な処理がありました。</value>
+  </data>
+  <data name="LayoutErrorMessage" xml:space="preserve">
+    <value>様式ファイルが読み込まれていないのにデータが出力されました。</value>
+  </data>
+  <data name="LayoutExistsErrorMessage" xml:space="preserve">
+    <value>書式ファイルの読み込みエラーです。</value>
+  </data>
+  <data name="LayoutQueryErrorMessage" xml:space="preserve">
+    <value>様式ファイルが読み込まれていないのに実行しようとしました。</value>
+  </data>
+  <data name="NotSupportedAPIErrorMessage" xml:space="preserve">
+    <value>使用不可能なメソッドが利用されています。</value>
+  </data>
+  <data name="PrinterErrorMessage" xml:space="preserve">
+    <value>プリンタ初期化エラーです。</value>
+  </data>
+  <data name="PrintErrorMessage" xml:space="preserve">
+    <value>印刷されませんでした。</value>
+  </data>
+  <data name="PrinterSettingErrorMessage" xml:space="preserve">
+    <value>プリンタの設定ファイルの読み込みに失敗しました。</value>
+  </data>
+  <data name="QueryExistsErrorMessage" xml:space="preserve">
+    <value>クエリーファイルが読み込まれていないのに実行しようとしました。</value>
+  </data>
+  <data name="QueryNotFieldErrorMessage" xml:space="preserve">
+    <value>データベース結果列名と同じ印刷項目名が存在しません。</value>
+  </data>
+  <data name="QueryNotResultErrorMessage" xml:space="preserve">
+    <value>データベース結果行が存在しません。</value>
+  </data>
+  <data name="RecordErrorMessage" xml:space="preserve">
+    <value>指定のレコードが存在しません。</value>
+  </data>
+  <data name="RecordExistsErrorMessage" xml:space="preserve">
+    <value>レコード名が存在しません。</value>
+  </data>
+  <data name="RecordPagingErrorMessage" xml:space="preserve">
+    <value>指定のレコードを出力すると現在のサブフォームを越してしまいます。</value>
+  </data>
+  <data name="ReportDirectorConnectionErrorMessage" xml:space="preserve">
+    <value>Report Director Enterpriseサーバとの接続に失敗しました。</value>
+  </data>
+  <data name="ReportDirectorServerErrorMessage" xml:space="preserve">
+    <value>Report Director Enterpris e サーバでエラーが発生しました。</value>
+  </data>
+  <data name="ReportDirectorSpoolerErrorMessage" xml:space="preserve">
+    <value>Report Director Enterprise にスプールする際､文書データの生成に失敗しました。</value>
+  </data>
+  <data name="SettingErrorMessage" xml:space="preserve">
+    <value>設定ファイル読み込みエラーです。</value>
+  </data>
+  <data name="SortErrorMessage" xml:space="preserve">
+    <value>ソートオブジェクトの作成エラーです。</value>
+  </data>
+  <data name="SortRecordErrorMessage" xml:space="preserve">
+    <value>ソートレコードの作成エラーです。</value>
+  </data>
+  <data name="SpoolerErrorMessage" xml:space="preserve">
+    <value>スプーラへの書き込みエラーです。</value>
+  </data>
+  <data name="StackErrorMessage" xml:space="preserve">
+    <value>スタックファイル作成エラーです。</value>
+  </data>
+  <data name="SubFormErrorMessage" xml:space="preserve">
+    <value>サブフォームが無いにも関わらずレコードが指定されました。</value>
+  </data>
+  <data name="TemporaryErrorMessage" xml:space="preserve">
+    <value>作業用ファイルの作成に失敗しました。</value>
+  </data>
+  <data name="SvfClientErrorMessage" xml:space="preserve">
+    <value>SvfClient で致命的なAPIエラーが発生しました。</value>
+  </data>
+</root>

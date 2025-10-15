@@ -1,0 +1,918 @@
+html,
+body,
+body div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #333333;
+}
+body {
+  height: 100%;
+}
+html,
+body {
+  width: 100%;
+}
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+th {
+  font-weight: normal;
+  vertical-align: top;
+}
+td {
+  font-weight: normal;
+  vertical-align: top;
+}
+li {
+  list-style: none;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  zoom: 1;
+}
+/* global variables
+----------------------------------*/
+/* Typography (Bootstrap のオーバ�Eライド！E
+-------------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: Meiryo, MS PGothic, Segoe UI;
+}
+/* global タグのスタイル定義
+-------------------------------------*/
+* {
+  font-family: Meiryo, MS PGothic, Segoe UI;
+}
+body {
+  height: 100%;
+  font-size: 13px;
+}
+.wrap {
+  min-height: 100%;
+  padding-top: 45px;
+  padding-bottom: 55px;
+}
+/* ヘッダーのスタイル定義
+-------------------------------------*/
+.logo {
+  height: 30px;
+  width: 45px;
+  margin-left: 5px;
+  float: left;
+  background-image: url("images/logo.png");
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  margin-top: 10px;
+}
+/* ヘッダーのスタイル定義
+-------------------------------------*/
+.menu-container {
+  position: absolute;
+  margin-top: -20px;
+  width: 100%;
+  z-index: 1000;
+}
+@media (min-width: 750px) and (max-width: 970px) {
+  .page-title {
+    width: 250px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+/* footer クラスのスタイル定義
+-------------------------------------*/
+.footer {
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 990;
+}
+.footer .footer-container {
+  background-color: #efefef;
+  z-index: 2;
+}
+.footer .footer-content {
+  height: 40px;
+  position: relative;
+}
+.footer .footer-content .command {
+  text-align: right;
+  position: absolute;
+  right: 15px;
+  top: 5px;
+}
+.footer .footer-content .command button {
+  margin-left: 6px;
+  min-width: 80px;
+}
+.footer .footer-content .command-left {
+  text-align: left;
+  position: absolute;
+  left: 15px;
+  top: 5px;
+}
+.footer .footer-content .command-left button {
+  margin-left: 6px;
+  min-width: 80px;
+}
+/* table
+----------------------------------*/
+table.datatable {
+  border-collapse: collapse;
+  width: 100%;
+  margin-right: 10px;
+  /*max-width: 2000px;*/
+}
+table.datatable thead {
+  background-color: #efefef;
+}
+table.datatable th,
+table.datatable td {
+  border-collapse: collapse;
+  padding: 1px;
+  vertical-align: middle;
+}
+table.datatable th {
+  border: 1px solid #cccccc;
+  background-color: #efefef;
+  font-weight: normal;
+  text-align: center;
+}
+table.datatable th i {
+  margin-left: 5px;
+}
+table.datatable td {
+  border: 1px solid #cccccc;
+}
+table.datatable td button {
+  padding: 0 2px 0 2px;
+  min-width: 0;
+}
+table.datatable td label {
+  min-width: 0;
+}
+table.datatable td input[type="checkbox"] {
+  vertical-align: middle;
+}
+table.datatable td.center {
+  text-align: center;
+}
+table.datatable tbody {
+  background-color: #ffffff;
+}
+table.datatable input[type="text"],
+table.datatable input[type="tel"],
+table.datatable select,
+table.datatable textarea {
+  margin: 0px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  width: 100%;
+  box-sizing: border-box;
+}
+table.datatable button {
+  margin: 0px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+table.datatable .select-tab {
+  border-left-width: 7px;
+  border-left-style: solid;
+  min-width: 0px;
+  display: block;
+  height: 24px;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+table.datatable .select-tab-2lines {
+  border-left-width: 7px;
+  border-left-style: solid;
+  min-width: 0px;
+  display: block;
+  height: 55px;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+table.datatable .selected {
+  border-left-color: #5cb85c;
+}
+table.datatable .unselected {
+  border-left-color: #dfdfdf;
+}
+table.datatable .unselected-hover {
+  border-left-color: #c1c1c1;
+}
+table.datatable .has-error {
+  background-color: #ffdab9;
+}
+table.datatable tbody tr {
+  height: 2.4em;
+}
+table.datatable tbody.autoheight tr {
+  height: auto;
+}
+/* form コントロールのスタイル定義
+----------------------------------*/
+label {
+  display: inline-block;
+  padding: 1px;
+  min-width: 80px;
+  font-weight: normal;
+}
+.text {
+  border: 1px solid #cccccc;
+  border-radius: 2px;
+  margin: 1px;
+  padding: 1px;
+  /* min-width: 100px; */
+  display: inline-block;
+  height: 26px;
+}
+input[type="text"],
+input[type="tel"],
+select,
+textarea {
+  border: 1px solid #cccccc;
+  border-radius: 2px;
+  margin: 1px;
+  padding: 1px;
+  /* min-width: 100px; */
+  display: inline-block;
+  height: 26px;
+  font-family: Meiryo, MS PGothic, Segoe UI;
+  ime-mode: inactive;
+}
+select {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+button,
+input[type="button"],
+input[type="submit"],
+a.btn {
+  min-width: 60px;
+}
+.control-common {
+  padding: 2px;
+  margin-bottom: 2px;
+  height: 30px;
+}
+.control-common input[type="text"],
+.control-common input[type="tel"],
+.control-common select {
+  margin-bottom: 3px;
+}
+.control-common button,
+.control-common input[type="button"],
+.control-common input[type="submit"],
+.control-common a.btn {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+.control-common input[type="checkbox"],
+.control-common input[type="radio"] {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.control-end {
+  border-right: 5px solid #ffffff;
+}
+.control {
+  background-color: #f6f6f6;
+  padding: 2px;
+  margin-bottom: 2px;
+  height: 30px;
+}
+.control input[type="text"],
+.control input[type="tel"],
+.control select {
+  margin-bottom: 3px;
+}
+.control button,
+.control input[type="button"],
+.control input[type="submit"],
+.control a.btn {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+.control input[type="checkbox"],
+.control input[type="radio"] {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.control-label {
+  border-left: 5px solid #dfdfdf;
+  background-color: #f6f6f6;
+  padding: 2px;
+  margin-bottom: 2px;
+  height: 30px;
+}
+.control-label input[type="text"],
+.control-label input[type="tel"],
+.control-label select {
+  margin-bottom: 3px;
+}
+.control-label button,
+.control-label input[type="button"],
+.control-label input[type="submit"],
+.control-label a.btn {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+.control-label input[type="checkbox"],
+.control-label input[type="radio"] {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.control-label.toolbar {
+  height: auto;
+  min-height: 30px;
+}
+.control-success {
+  background-color: #f6f6f6;
+  padding: 2px;
+  margin-bottom: 2px;
+  height: 30px;
+}
+.control-success input[type="text"],
+.control-success input[type="tel"],
+.control-success select {
+  margin-bottom: 3px;
+}
+.control-success button,
+.control-success input[type="button"],
+.control-success input[type="submit"],
+.control-success a.btn {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+.control-success input[type="checkbox"],
+.control-success input[type="radio"] {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.control-success-label {
+  border-left: 5px solid #dfdfdf;
+  background-color: #f6f6f6;
+  padding: 2px;
+  margin-bottom: 2px;
+  height: 30px;
+}
+.control-success-label input[type="text"],
+.control-success-label input[type="tel"],
+.control-success-label select {
+  margin-bottom: 3px;
+}
+.control-success-label button,
+.control-success-label input[type="button"],
+.control-success-label input[type="submit"],
+.control-success-label a.btn {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+.control-success-label input[type="checkbox"],
+.control-success-label input[type="radio"] {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.control-required {
+  background-color: #ffdab9;
+  padding: 2px;
+  margin-bottom: 2px;
+  height: 30px;
+}
+.control-required input[type="text"],
+.control-required input[type="tel"],
+.control-required select {
+  margin-bottom: 3px;
+}
+.control-required button,
+.control-required input[type="button"],
+.control-required input[type="submit"],
+.control-required a.btn {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+.control-required input[type="checkbox"],
+.control-required input[type="radio"] {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.control-required-label {
+  border-left: 5px solid #d9534f;
+  background-color: #ffdab9;
+  padding: 2px;
+  margin-bottom: 2px;
+  height: 30px;
+}
+.control-required-label input[type="text"],
+.control-required-label input[type="tel"],
+.control-required-label select {
+  margin-bottom: 3px;
+}
+.control-required-label button,
+.control-required-label input[type="button"],
+.control-required-label input[type="submit"],
+.control-required-label a.btn {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+.control-required-label input[type="checkbox"],
+.control-required-label input[type="radio"] {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.control-warn {
+  background-color: #fcf8f2;
+  padding: 2px;
+  margin-bottom: 2px;
+  height: 30px;
+}
+.control-warn input[type="text"],
+.control-warn input[type="tel"],
+.control-warn select {
+  margin-bottom: 3px;
+}
+.control-warn button,
+.control-warn input[type="button"],
+.control-warn input[type="submit"],
+.control-warn a.btn {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+.control-warn input[type="checkbox"],
+.control-warn input[type="radio"] {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.control-warn-label {
+  border-left: 5px solid #f0ad4e;
+  background-color: #fcf8f2;
+  padding: 2px;
+  margin-bottom: 2px;
+  height: 30px;
+}
+.control-warn-label input[type="text"],
+.control-warn-label input[type="tel"],
+.control-warn-label select {
+  margin-bottom: 3px;
+}
+.control-warn-label button,
+.control-warn-label input[type="button"],
+.control-warn-label input[type="submit"],
+.control-warn-label a.btn {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+.control-warn-label input[type="checkbox"],
+.control-warn-label input[type="radio"] {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+/* メニュー用のコントロール */
+.menucontainer [class^="col-"],
+.menucontainer [class*=" col-"] {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.menu-control {
+  padding: 2px;
+  margin-bottom: 2px;
+  height: 30px;
+  background-color: #ffffff;
+}
+.menu-control input[type="text"],
+.menu-control input[type="tel"],
+.menu-control select {
+  margin-bottom: 3px;
+}
+.menu-control button,
+.menu-control input[type="button"],
+.menu-control input[type="submit"],
+.menu-control a.btn {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+.menu-control input[type="checkbox"],
+.menu-control input[type="radio"] {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.height-break {
+  min-height: 30px;
+  height: auto;
+}
+.menu-control-label {
+  background-color: #f6f6f6;
+  padding: 2px;
+  margin-bottom: 2px;
+  height: 30px;
+  background-color: #ffffff;
+  border-left: 5px solid #cfcfcf;
+  min-height: 30px;
+  height: auto;
+}
+.menu-control-label input[type="text"],
+.menu-control-label input[type="tel"],
+.menu-control-label select {
+  margin-bottom: 3px;
+}
+.menu-control-label button,
+.menu-control-label input[type="button"],
+.menu-control-label input[type="submit"],
+.menu-control-label a.btn {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+.menu-control-label input[type="checkbox"],
+.menu-control-label input[type="radio"] {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.menu-control-success {
+  background-color: #f4f8fa;
+  border-right: 5px solid white;
+  border-left: 5px solid #bce8f1;
+  padding: 2px;
+  margin-bottom: 2px;
+  height: 30px;
+  min-height: 30px;
+  height: auto;
+}
+.menu-control-success input[type="text"],
+.menu-control-success input[type="tel"],
+.menu-control-success select {
+  margin-bottom: 3px;
+}
+.menu-control-success button,
+.menu-control-success input[type="button"],
+.menu-control-success input[type="submit"],
+.menu-control-success a.btn {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+.menu-control-success input[type="checkbox"],
+.menu-control-success input[type="radio"] {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.menu-child-control-success {
+  background-color: #f4f8fa;
+  border-right: 5px solid white;
+  border-left: 5px solid #bce8f1;
+  padding: 2px;
+  margin-bottom: 2px;
+  height: 30px;
+  border-right-width: 0px;
+  min-height: 30px;
+  height: auto;
+}
+.menu-child-control-success input[type="text"],
+.menu-child-control-success input[type="tel"],
+.menu-child-control-success select {
+  margin-bottom: 3px;
+}
+.menu-child-control-success button,
+.menu-child-control-success input[type="button"],
+.menu-child-control-success input[type="submit"],
+.menu-child-control-success a.btn {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+.menu-child-control-success input[type="checkbox"],
+.menu-child-control-success input[type="radio"] {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.menu-control-success-label {
+  border-left: 5px solid #ececec;
+  background-color: #ececec;
+  background-color: #f6f6f6;
+  padding: 2px;
+  margin-bottom: 2px;
+  height: 30px;
+  min-height: 30px;
+  height: auto;
+}
+.menu-control-success-label input[type="text"],
+.menu-control-success-label input[type="tel"],
+.menu-control-success-label select {
+  margin-bottom: 3px;
+}
+.menu-control-success-label button,
+.menu-control-success-label input[type="button"],
+.menu-control-success-label input[type="submit"],
+.menu-control-success-label a.btn {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+.menu-control-success-label input[type="checkbox"],
+.menu-control-success-label input[type="radio"] {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.menu-item {
+  text-align: left;
+  width: 100%;
+  color: #555555;
+  font-size: 16px;
+}
+.menu-child-row {
+  /*padding-left: 15px;*/
+  padding-right: 5px;
+}
+.menu-child-item:hover {
+  background-color: #f0f7fd;
+  border-left-color: #58b7f8;
+  /*#d0e3f0;*/
+}
+/* メチE��ージ表示領域のクラス定義
+----------------------------------*/
+.message-area {
+  margin-left: auto;
+  margin-right: auto;
+}
+.message-area span {
+  float: left;
+  margin: 8px;
+}
+.message-area .notify-title-holder {
+  height: 32px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+.message-area .notify-title-message-length {
+  margin-right: 5px;
+}
+.message-area .notify-title-open,
+.message-area .notify-title-close {
+  vertical-align: middle;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: -5px;
+}
+.message-area .alert-message {
+  color: #ff0000;
+  background-color: #ffffff;
+  border-top: 2px solid #ff6666;
+  max-height: 200px;
+  overflow: auto;
+}
+.message-area .alert-message ul {
+  margin: 0px;
+  list-style: none;
+  padding: 0px;
+}
+.message-area .alert-message ul pre {
+  font-family: Meiryo, MS PGothic, Segoe UI;
+  display: block;
+  padding: 4px;
+  padding-left: 40px;
+}
+.message-area .alert-message ul pre:hover {
+  background-color: #fcf2f2;
+}
+.message-area .info-message {
+  border-top: 2px solid #6666ff;
+  color: #0000ff;
+  background-color: #ffffff;
+  max-height: 200px;
+  overflow: auto;
+}
+.message-area .info-message ul {
+  margin-top: 5px;
+  list-style: none;
+}
+.message-area .info-message ul pre {
+  font-family: Meiryo, MS PGothic, Segoe UI;
+  display: block;
+  padding: 4px;
+  padding-left: 10px;
+}
+.message-area .info-message ul pre:hover {
+  background-color: #f0f7fd;
+}
+.message-area .warn-message {
+  border-top: 2px solid #f0ad4e;
+  color: #eea236;
+  background-color: #ffffff;
+  max-height: 200px;
+  overflow: auto;
+}
+.message-area .warn-message ul {
+  margin-top: 5px;
+  list-style: none;
+}
+.message-area .warn-message ul pre {
+  font-family: Meiryo, MS PGothic, Segoe UI;
+  display: block;
+  padding: 4px;
+  padding-left: 10px;
+}
+.message-area .warn-message ul pre:hover {
+  background-color: #fcf8e3;
+}
+/*ボタンのスタイル*/
+button.btn[disabled] {
+  border-color: #cccccc;
+  background-color: #ffffff;
+  color: #999999;
+}
+/*loading*/
+.loading .loading-overlay {
+  background-color: #999999;
+  opacity: .3;
+  filter: alpha(opacity=30);
+}
+.loading .loading-holder {
+  width: 100%;
+}
+.loading .loading-image {
+  height: 50px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url(images/loading.gif);
+}
+.loading .loading-message {
+  margin-top: 1em;
+  font-size: 1.5em;
+  text-align: center;
+}
+.number-right {
+  text-align: right;
+  display: block;
+  float: left;
+  width: 100%;
+}
+.data-count {
+  margin-top: 5px;
+  margin-right: 5px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+input[type="text"].ime-active,
+input[type="tel"].ime-active,
+select.ime-active,
+textarea.ime-active {
+  ime-mode: active;
+}
+/* 年月指定�Edatepicker利用時�Ecss */
+.hide-calendar .ui-datepicker-calendar {
+  display: none;
+}
+.ui-datepicker-month {
+  width: 70px !important;
+}
+/* datatableの選択行背景色 */
+.datatable tr.selected-row {
+  background-color: #fffed4;
+}
+/* subtotal使用時�E小計行背景色 */
+.subtotal tr {
+  background-color: #f0f8ff;
+}
+.subtotal tr td {
+  font-weight: bold;
+}
+/* 斁E���Eがオーバ�Eフローすると...表示する*/
+.overflow-ellipsis {
+  float: left;
+  white-space: nowrap;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+}
+.toolbar .data-count {
+  position: absolute;
+  right: 2px;
+}
+/** ファイルdrag&drop用*/
+.drop-description {
+  position: absolute;
+  width: 80%;
+  font-size: 16px;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  -ms-transform: translateY(-50%) translateX(-50%);
+}
+.drop-zone.drag-over {
+  border: 3px dashed #314ef7;
+}
+/** スライドアチE�EメチE��ージ表示時�Eレイアウト調整 */
+.modal-body {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.modal-message {
+  position: absolute;
+  bottom: 45px;
+  left: 0px;
+  right: 0px;
+  margin-right: 17px;
+  z-index: 900;
+}
+.modal .toolbar .data-count {
+  position: absolute;
+  right: 20px;
+}
+.modal-footer {
+  padding: 5px 20px 5px 20px;
+}
+/* datepicker*/
+.ui-datepicker {
+  z-index: 600 !important;
+}

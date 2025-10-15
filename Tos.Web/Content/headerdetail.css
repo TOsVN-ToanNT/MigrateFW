@@ -1,0 +1,50 @@
+/*
+ * TODO: bootstrap.css の中で -15px が指定されており、両辺が�Eみ出すため、Epx に解除、E
+ * 佁E��、標準でも正しく表示される方法があると思われるので要調査
+ */
+.header-command {
+  background-color: #f6f6f6;
+  margin: 1px 0px;
+  padding: 3px;
+  text-align: right;
+}
+div.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+div.row .control input {
+  padding: 1px;
+}
+div.row .control select {
+  padding: 1px 2px;
+}
+div.row label {
+  display: inline-block;
+  padding: 4px;
+  padding-bottom: 5px;
+}
+div.row input[type="tel"],
+div.row input[type="text"],
+div.row .label,
+div.row select {
+  width: 98%;
+}
+div.row select {
+  padding: 1px;
+}
+div.row .btn-xs {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+.content-wrap {
+  padding: 4px;
+}
+.search-list tbody {
+  cursor: pointer;
+}
+.detail-command {
+  margin-top: 5px;
+}
+.deleted tr {
+  background-color: #dddddd;
+}
